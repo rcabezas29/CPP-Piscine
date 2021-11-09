@@ -1,16 +1,7 @@
 #include "Contact.hpp"
 
 
-Contact::Contact(void)
-{
-	return ;
-}
-
-Contact::~Contact(void)
-{
-	std::cout << "Destructor called" << std::endl;
-	return ;
-}
+Contact::Contact(void){}
 
 void	Contact::setName(std::string name)
 {

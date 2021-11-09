@@ -16,7 +16,6 @@ class Contact
 
 	public:
 		Contact(void);
-		~Contact(void);
 		void		setName(std::string name);
 		std::string	getName(void);
 		void		setLastname(std::string lastname);
