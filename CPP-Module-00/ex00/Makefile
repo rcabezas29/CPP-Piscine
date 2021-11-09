@@ -10,4 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-include <io>
+NAME = megaphone
+
+CFLAGS = -Wall -Wextra -Werror
+
+all: $(NAME)
+
+$(NAME): 
+	clang++ $(CFLAGS) megaphone.cpp -o $(NAME)
+
+fclean:
+	rm $(NAME)
+
+re:	fclean all
+
+.PHONY: all fclean
