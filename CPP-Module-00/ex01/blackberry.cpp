@@ -7,7 +7,7 @@ int	main(void)
 
 	while (1)
 	{
-		std::cout << "What do you want to do?\n";
+		std::cout << "What do you want to do?" << std::endl;
 		std::cin >> action;
 		if (action == "ADD")
 			blackberry.add();
@@ -16,6 +16,6 @@ int	main(void)
 		else if (action == "EXIT")
 			exit(0);
 		else
-			std::cout << "Error. Options are ADD, SEARCH and EXIT";
+			std::cout << "Error. Options are ADD, SEARCH and EXIT" << std::endl;
 	}
 }

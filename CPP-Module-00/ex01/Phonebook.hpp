@@ -3,7 +3,7 @@
 
 #include "Contact.hpp"
 #include <cstdlib>
-#include <ostream>
+#include <iostream>
 
 class Phonebook
 {
