@@ -43,27 +43,27 @@ void	Phonebook::add(void)
 	std::string	tmp;
 
 	std::cout << "Name: ";
-	std::cin >> tmp;
+	std::getline(std::cin, tmp);
 	if (tmp.length() > 10)
 		tmp = tmp.substr(0, 9) + ".";
 	this->contacts[this->savedContacts % 8].setName(tmp);
 	std::cout << "Last Name: ";
-	std::cin >> tmp;
+	std::getline(std::cin, tmp);
 	if (tmp.length() > 0)
 		tmp = tmp.substr(0, 9) + ".";
 	this->contacts[this->savedContacts % 8].setLastname(tmp);
 	std::cout << "Nickname: ";
-	std::cin >> tmp;
+	std::getline(std::cin, tmp);
 	if (tmp.length() > 10)
 		tmp = tmp.substr(0, 9) + ".";
 	this->contacts[this->savedContacts % 8].setNickname(tmp);
 	std::cout << "Phone: ";
-	std::cin >> tmp;
+	std::getline(std::cin, tmp);
 	if (tmp.length() > 10)
 		tmp = tmp.substr(0, 9) + ".";
 	this->contacts[this->savedContacts % 8].setPhone(tmp);
 	std::cout << "Darkest secret: ";
-	std::cin >> tmp;
+	std::getline(std::cin, tmp);
 	if (tmp.length() > 10)
 		tmp = tmp.substr(0, 9) + ".";
 	this->contacts[this->savedContacts % 8].setDarkestsecret(tmp);

@@ -1,14 +1,13 @@
 #include "Phonebook.hpp"
+#include <string>
 
 int	main(void)
 {
 	std::string	action;
 	Phonebook	blackberry;
 
-	while (1)
+	while (std::cout << "What do you want to do? " && std::getline(std::cin, action))
 	{
-		std::cout << "What do you want to do?" << std::endl;
-		std::cin >> action;
 		if (action == "ADD")
 			blackberry.add();
 		else if (action == "SEARCH")
