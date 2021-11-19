@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/19 07:05:11 by rcabezas          #+#    #+#              #
-#    Updated: 2021/11/19 07:05:51 by rcabezas         ###   ########.fr        #
+#    Created: 2021/11/19 07:05:25 by rcabezas          #+#    #+#              #
+#    Updated: 2021/11/19 08:24:55 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie_horde
+NAME = string
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
