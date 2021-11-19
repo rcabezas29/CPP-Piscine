@@ -13,9 +13,10 @@ class	Zombie
 		Zombie(void);
 		Zombie(std::string name);
 		~Zombie(void);
+		Zombie &operator=(const Zombie &zombie);
 
-		void	set_name(std::string _name);
 		void	announce(void);
-
+		Zombie	*new_zombie(std::string name);
+		Zombie	*randomChump(std::string name);
 };
 #endif
