@@ -4,8 +4,7 @@ void	heap_zombie()
 {
 	Zombie	*h_zombie;
 
-	h_zombie->new_zombie("Patrick");
-	h_zombie->announce();
+	h_zombie = randomChump("Patrick");
 	delete h_zombie;
 }
 

@@ -2,18 +2,23 @@
 
 Zombie::Zombie(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Default Constructor called" << std::endl;
 }
 
 Zombie::Zombie(std::string name)
 {
-	std::cout << "Constructor called from stack" << std::endl;
+	std::cout << "Constructor called" << std::endl;
 	this->_name = name;
 }
 
 Zombie::~Zombie(void)
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+void	Zombie::set_name(std::string _name)
+{
+	this->_name = _name;
 }
 
 void	Zombie::announce(void)
