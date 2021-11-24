@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/21 11:31:43 by rcabezas          #+#    #+#              #
-#    Updated: 2021/11/21 11:31:44 by rcabezas         ###   ########.fr        #
+#    Created: 2021/11/24 21:11:23 by rcabezas          #+#    #+#              #
+#    Updated: 2021/11/24 21:11:47 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence
+NAME = karen
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS = main.cpp Karen.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

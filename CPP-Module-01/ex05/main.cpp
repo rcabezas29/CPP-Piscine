@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 11:31:27 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/21 11:31:28 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/11/24 21:12:02 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/11/24 21:25:40 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#include "Karen.hpp"
 
-#include <iostream>
-#include <string>
-#include "Weapon.hpp"
-
-class	HumanA
+int	main(void)
 {
-	private:
-		Weapon		*_gun;
-		std::string	_name;
+	Karen	karen;
 
-	public:
-		HumanA(void);
-		HumanA(std::string name, Weapon gun);
-		~HumanA(void);
-		HumanA &operator=(const HumanA &HumanA);
-
-		void	attack();
-};
-
-#endif
+	karen.complain("debug");
+}

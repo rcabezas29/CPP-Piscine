@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 11:31:27 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/21 11:31:28 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/11/24 19:30:43 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/11/24 21:09:23 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
 #include <iostream>
 #include <string>
-#include "Weapon.hpp"
+#include <fstream>
 
-class	HumanA
+class Replace
 {
 	private:
-		Weapon		*_gun;
-		std::string	_name;
+		std::string		_filename;
+		std::fstream	_file;
+		std::string		_replacement;
+		std::string		_toReplace;
 
 	public:
-		HumanA(void);
-		HumanA(std::string name, Weapon gun);
-		~HumanA(void);
-		HumanA &operator=(const HumanA &HumanA);
+		Replace(void);
+		Replace(std::string _filename, std::string _replacement, std::string _toReplace);
+		~Replace(void);
+		Replace &operator=(const Replace &Replace);
 
-		void	attack();
+		void		get_line(void);
+		std::string	replace_line(std::string line);
 };
-
 #endif

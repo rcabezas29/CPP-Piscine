@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 11:31:31 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/11/21 11:36:03 by rcabezas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "HumanB.hpp"
 
 HumanB::HumanB(void)
@@ -25,3 +37,7 @@ void	HumanB::attack()
 		std::cout << this->_name << " attacks with his " << this->_gun->getType() << std::endl;
 }
 
+void	HumanB::setWeapon(Weapon club)
+{
+	this->_gun = &club;
+}

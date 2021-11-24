@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 11:31:27 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/21 11:31:28 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/11/24 21:16:08 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/11/24 21:37:29 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
 #include <iostream>
 #include <string>
-#include "Weapon.hpp"
 
-class	HumanA
+class Karen
 {
 	private:
-		Weapon		*_gun;
-		std::string	_name;
-
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+		
 	public:
-		HumanA(void);
-		HumanA(std::string name, Weapon gun);
-		~HumanA(void);
-		HumanA &operator=(const HumanA &HumanA);
+		Karen(void);
+		~Karen(void);
+		Karen &operator=(const Karen &Karen);
 
-		void	attack();
+		void	complain(std::string level);
 };
 
 #endif

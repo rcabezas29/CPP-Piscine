@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/22 17:30:54 by rcabezas          #+#    #+#              #
+#    Updated: 2021/11/24 21:07:03 by rcabezas         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = replace
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.cpp 
+SRCS = main.cpp Replace.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

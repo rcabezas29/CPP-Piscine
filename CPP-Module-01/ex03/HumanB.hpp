@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 11:31:35 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/11/21 11:35:35 by rcabezas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HUMANB_HPP
 # define HUMANB_HPP
 
@@ -18,6 +30,7 @@ class	HumanB
 		HumanB &operator=(const HumanB &HumanB);
 
 		void	attack();
+		void	setWeapon(Weapon club);
 };
 
 #endif
