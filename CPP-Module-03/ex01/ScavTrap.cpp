@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 20:23:26 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 22:13:51 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/06 23:46:17 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/06 23:49:05 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int	main(void)
+ScavTrap::ScavTrap(std::string _name)
 {
-	ClapTrap	clap("Freddy");
-	std::string	target;
+	std::cout << "Contructor called" << std::endl;
+	this->_name = _name;
+}
 
-	target = "Jimmy";
-	clap.attack(target);
-	return 0;
+ScavTrap::~ScavTrap(void)
+{
+	std::cout << "Destructor called" << std::endl;
 }

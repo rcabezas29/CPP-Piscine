@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 20:23:26 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 22:13:51 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/06 22:15:29 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/06 23:45:20 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class	ScavTrap : ClapTrap
 {
-	ClapTrap	clap("Freddy");
-	std::string	target;
+	private:
+		std::string	_name;
+		int			_hitpoints;
+		int			_energyPoints;
+		int			_attackDamage;
 
-	target = "Jimmy";
-	clap.attack(target);
-	return 0;
-}
+	public:
+		ScavTrap(std::string _name);
+		ScavTrap(const ScavTrap &copy);
+		virtual	~ScavTrap(void);
+		ScavTrap	&operator=(const ScavTrap &op);
+
+};
+
+#endif

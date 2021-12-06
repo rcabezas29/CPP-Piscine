@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 20:16:26 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 22:00:49 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 23:45:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class	ClapTrap
 		
 	public:
 		ClapTrap(std::string _name);
+		ClapTrap(const ClapTrap &copy);
 		virtual	~ClapTrap(void);
-		ClapTrap &operator=(const ClapTrap &op);
+		ClapTrap	&operator=(const ClapTrap &op);
 
 		void	attack(std::string const &target);
 		void	takeDamage(unsigned int amount);
