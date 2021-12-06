@@ -6,15 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:36:43 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/24 21:09:35 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 21:09:38 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Replace.hpp"
-
-Replace::Replace(void)
-{
-}
 
 Replace::Replace(std::string _filename, std::string _replacement, std::string _toReplace)
 {
@@ -36,10 +32,11 @@ std::string	Replace::replace_line(std::string line)
 	
 	position = 0;
 	newline = line.substr(position, line.find(this->_toReplace));
-	while ((position = line.find(line, position)))
+	while ((position = line.find(this->_toReplace, position)) < INT32_MAX)
 	{
 		newline = newline + this->_replacement;
-		newline = line.substr(position, line.find(this->_toReplace));
+		position += this->_replacement.length();
+		newline = newline + line.substr(position, line.find(this->_toReplace));
 	}
 	return newline;
 }
@@ -60,6 +57,6 @@ void	Replace::get_line(void)
 			newfile << replacedLine << "\n";
 		}
 		else
-			newfile << line  << "\n";
+			newfile << line << "\n";
 	}
 }

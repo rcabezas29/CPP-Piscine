@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 07:05:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/19 07:05:54 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 19:17:32 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 	Zombie	*horde;
 
 	horde = zombieHorde(5, "Tim");
+	horde->set_name("Kevin");
 	for (int i = 0; i < 5; i++)
 		horde[i].announce();
 }

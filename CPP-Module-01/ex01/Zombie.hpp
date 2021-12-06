@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 07:05:18 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/19 07:05:45 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 19:12:40 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class	Zombie
 		Zombie(void);
 		Zombie(std::string name);
 		~Zombie(void);
-		Zombie &operator=(const Zombie &zombie);
 
 		void	set_name(std::string _name);
 		void	announce(void);
 };
+
 Zombie	*zombieHorde(int N, std::string name);
 #endif

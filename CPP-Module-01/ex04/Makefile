@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 17:30:54 by rcabezas          #+#    #+#              #
-#    Updated: 2021/11/24 21:07:03 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/06 20:39:49 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ clean:
 
 fclean:	clean
 	rm -f $(NAME)
+	rm -f *.replace
 
 re:	fclean all
 

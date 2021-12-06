@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:31:50 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/21 11:31:51 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:04:04 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ class	Weapon
 		std::string	_type;
 
 	public:
-		Weapon(void);
 		Weapon(std::string name);
 		~Weapon(void);
-		Weapon &operator=(const Weapon &Weapon);
 
 		std::string const	&getType(void);
 		void				setType(std::string _type);

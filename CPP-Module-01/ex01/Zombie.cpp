@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 07:05:15 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/19 07:05:16 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 19:18:53 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void	Zombie::set_name(std::string _name)
 
 void	Zombie::announce(void)
 {
-	std::cout << this->_name << " > BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

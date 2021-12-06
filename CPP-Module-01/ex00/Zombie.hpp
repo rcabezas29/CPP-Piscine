@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 07:04:58 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/19 07:05:58 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 19:01:12 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ class	Zombie
 		std::string	_name;
 		
 	public:
-		Zombie(void);
 		Zombie(std::string name);
 		~Zombie(void);
-		Zombie &operator=(const Zombie &zombie);
 
 		void	announce(void);
 };

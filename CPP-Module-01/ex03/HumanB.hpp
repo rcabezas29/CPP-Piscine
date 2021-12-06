@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:31:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/21 11:35:35 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:05:27 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ class	HumanB
 		std::string	_name;
 
 	public:
-		HumanB(void);
 		HumanB(std::string name);
 		~HumanB(void);
-		HumanB &operator=(const HumanB &HumanB);
 
 		void	attack();
 		void	setWeapon(Weapon club);
