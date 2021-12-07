@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:36:43 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 21:09:38 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/07 09:24:05 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ std::string	Replace::replace_line(std::string line)
 	
 	position = 0;
 	newline = line.substr(position, line.find(this->_toReplace));
-	while ((position = line.find(this->_toReplace, position)) < INT32_MAX)
+	while ((position = line.find(this->_toReplace, position)) != std::string::npos)
 	{
 		newline = newline + this->_replacement;
-		position += this->_replacement.length();
+		position += this->_toReplace.length();
 		newline = newline + line.substr(position, line.find(this->_toReplace));
 	}
 	return newline;
