@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:12:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/24 21:25:40 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/07 12:52:24 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	main(void)
 {
 	Karen	karen;
 
-	karen.complain("debug");
+	karen.complain("DEBUG");
 }

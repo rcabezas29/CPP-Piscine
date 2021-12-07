@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:16:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/11/24 21:37:29 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/07 09:32:54 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class Karen
 		
 	public:
 		Karen(void);
-		~Karen(void);
-		Karen &operator=(const Karen &Karen);
+		Karen(const Karen &copy);
+		virtual	~Karen(void);
+		Karen	&operator=(const Karen &op);
 
 		void	complain(std::string level);
 };
