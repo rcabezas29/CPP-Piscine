@@ -6,17 +6,16 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:31:23 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 20:08:43 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/08 21:30:56 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon gun)
+HumanA::HumanA(std::string name, Weapon &gun) : _gun(gun)
 {
 	std::cout << "HumanA constructor called" << std::endl;
 	this->_name = name;
-	this->_gun = &gun;
 }
 
 HumanA::~HumanA(void)
@@ -26,5 +25,5 @@ HumanA::~HumanA(void)
 
 void	HumanA::attack()
 {
-	std::cout << this->_name << " attacks with his " << this->_gun->getType() << std::endl;
+	std::cout << this->_name << " attacks with his " << this->_gun.getType() << std::endl;
 }

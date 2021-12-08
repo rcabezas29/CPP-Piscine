@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:31:27 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 20:05:01 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/08 21:20:29 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 class	HumanA
 {
 	private:
-		Weapon		*_gun;
+		Weapon		&_gun;
 		std::string	_name;
 
 	public:
-		HumanA(std::string name, Weapon gun);
+		HumanA(std::string name, Weapon &gun);
 		~HumanA(void);
 
 		void	attack();
