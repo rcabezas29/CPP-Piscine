@@ -1,6 +1,8 @@
 NAME = account
 
-CFLAGS = -Wall -Wextra -Werror
+CXX = clang++
+
+CXXFLAGS = -Wall -Wextra -Werror
 
 SRCS = Account.cpp tests.cpp
 
@@ -9,7 +11,7 @@ OBJS = $(SRCS:.cpp=.o)
 all:	$(NAME)
 
 $(NAME): $(OBJS)
-	clang++ $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

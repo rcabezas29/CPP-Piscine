@@ -12,12 +12,18 @@
 
 NAME = megaphone
 
-CFLAGS = -Wall -Wextra -Werror
+CXX = clang++
+
+CXXFLAGS = -Wall -Wextra -Werror
+
+SRCS = megaphone.cpp
+
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): 
-	clang++ $(CFLAGS) megaphone.cpp -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
 
 fclean:
 	rm $(NAME)
