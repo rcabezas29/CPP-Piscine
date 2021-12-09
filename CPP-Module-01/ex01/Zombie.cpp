@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 07:05:15 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 19:18:53 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:43:00 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 Zombie::Zombie(void)
 {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Constructor called" << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) : _name(name)
 {
 	std::cout << "Constructor called" << std::endl;
-	this->_name = name;
 }
 
 Zombie::~Zombie(void)
