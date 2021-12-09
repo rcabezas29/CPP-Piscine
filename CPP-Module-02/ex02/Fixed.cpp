@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 19:25:47 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/08 11:43:32 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:54:54 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,15 +127,23 @@ Fixed	Fixed::operator--(void)
 	return this->_intVal--;
 }
 
-// Fixed	&Fixed::operator++(void)
-// {
-
-// }
-
-// Fixed	&Fixed::operator--(void)
-// {
+Fixed	&Fixed::operator++(void)
+{
+	Fixed	pre;
 	
-// }
+	pre._intVal = this->_intVal;
+	this->_intVal++;
+	return pre;
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	int	pre;
+	
+	pre = this->_intVal;
+	this->_intVal--;
+	return pre;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////////// CLASS UTIL FUNCTIONS /////////////////////////////
@@ -162,24 +170,18 @@ int		Fixed::toInt(void) const
 	return this->_intVal >> this->_nbBits;
 }
 
-Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
 {
-	Fixed	auxA = a;
-	Fixed	auxB = b;
-
-	if (b < a)
-		return auxB;
-	return auxA;
+	if (a < b)
+		return a;
+	return b;
 }
 
-Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 {
-	Fixed	auxA = a;
-	Fixed	auxB = b;
-
-	if (b > a)
-		return auxB;
-	return auxA;
+	if (a > b)
+		return a;
+	return b;
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixe)
