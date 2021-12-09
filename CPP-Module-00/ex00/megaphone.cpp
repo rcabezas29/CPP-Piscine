@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/09 18:58:22 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/09 18:58:22 by rcabezas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <cctype>
 #include <iostream>
 #include <iterator>
@@ -23,7 +35,8 @@ int main(int argc, char **argv)
                 std::cout << (char)toupper(argv[i][j]);
                 j++;
             }
-            std::cout << " ";
+			if (i != argc - 1)
+            	std::cout << " ";
             i++;
         }
     }

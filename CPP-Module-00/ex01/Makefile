@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/09 18:59:08 by rcabezas          #+#    #+#              #
+#    Updated: 2021/12/09 19:00:10 by rcabezas         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = blackberry
 
 CXX = clang++
@@ -11,7 +23,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
