@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 19:25:47 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/09 16:54:54 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/10 18:40:45 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed::Fixed(const int integer)
 Fixed::Fixed(const float floater)
 {
 	//std::cout << "Float constructor called" << std::endl;
-	this->_intVal = (int)floater << this->_nbBits;
+	this->_intVal = (int)(floater * (1 << this->_nbBits));
 }
 
 Fixed::~Fixed(void)
@@ -94,55 +94,82 @@ bool	Fixed::operator>=(const Fixed &b) const
 
 Fixed	Fixed::operator+(const Fixed &b) const
 {
-	return this->getRawBits() + b.getRawBits();
+	float	aux;
+	Fixed	ret;
+
+	aux = this->toFloat();
+	aux += b.toFloat();
+	ret = Fixed(aux); 
+
+	return ret;
 }
 
 Fixed	Fixed::operator-(const Fixed &b) const
 {
-	return this->getRawBits() - b.getRawBits();
+	float	aux;
+	Fixed	ret;
+
+	aux = this->toFloat();
+	aux -= b.toFloat();
+	ret = Fixed(aux); 
+
+	return ret;
 }
 
 Fixed	Fixed::operator*(const Fixed &b) const
 {
-	return this->getRawBits() * b.getRawBits();
+	float	aux;
+	Fixed	ret;
+
+	aux = this->toFloat();
+	aux *= b.toFloat();
+	ret = Fixed(aux); 
+
+	return ret;
 }
 
 Fixed	Fixed::operator/(const Fixed &b) const
 {
-	return this->getRawBits() / b.getRawBits();
-}
+	float	aux;
+	Fixed	ret;
 
+	aux = this->toFloat();
+	aux /= b.toFloat();
+	ret = Fixed(aux);
+
+	return ret;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////// CLASS INCREMENT/DECREMENT FUNCTIONS //////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-Fixed	Fixed::operator++(void)
+Fixed	Fixed::operator++(int)
 {
-	return this->_intVal++;
+	Fixed	pre = *this;
+
+	this->setRawBits(this->getRawBits() + 1);
+	return pre;
 }
 
-Fixed	Fixed::operator--(void)
+Fixed	Fixed::operator--(int)
 {
-	return this->_intVal--;
+	Fixed	pre = *this;
+
+	this->setRawBits(this->getRawBits() - 1);
+	return pre;
 }
 
 Fixed	&Fixed::operator++(void)
 {
-	Fixed	pre;
-	
-	pre._intVal = this->_intVal;
-	this->_intVal++;
-	return pre;
+	this->setRawBits(this->getRawBits() + 1);
+	return *this;
 }
 
 Fixed	&Fixed::operator--(void)
 {
-	int	pre;
-	
-	pre = this->_intVal;
-	this->_intVal--;
-	return pre;
+	this->setRawBits(this->getRawBits() - 1);
+	return *this;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -162,12 +189,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (float)(this->_intVal / 1 << this->_nbBits);
+	return (float)this->_intVal / (float)(1 << this->_nbBits);
 }
 
 int		Fixed::toInt(void) const
 {
-	return this->_intVal >> this->_nbBits;
+	return this->_intVal / (1 << this->_nbBits);
 }
 
 const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)

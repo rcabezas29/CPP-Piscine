@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 19:24:45 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/09 16:50:35 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:49:33 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ class	Fixed
 		Fixed	operator*(const Fixed &b) const;
 		Fixed	operator/(const Fixed &b) const;
 
-		Fixed	operator++(void);
-		Fixed	& operator++(void);
-		Fixed	operator--(void);
-		Fixed	& operator--(void);
+		Fixed	operator++(int);
+		Fixed	&operator++(void);
+		Fixed	operator--(int);
+		Fixed	&operator--(void);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
