@@ -6,13 +6,17 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:07:15 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/09 19:07:16 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/12 09:31:14 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact(void)
+{
+}
+
+Contact::~Contact(void)
 {
 }
 

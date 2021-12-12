@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 11:49:17 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/08 18:57:35 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/12 09:55:21 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ class	Point
 		Point(const Point &copy);
 		virtual	~Point(void);
 		Point &operator=(const Point &op);
-
-		bool	bsp(Point const a, Point const b, Point const c,
-						Point const point);
 };
 bool	bsp(Point const a, Point const b, Point const c, Point const point);
 

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 19:07:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/09 19:07:36 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/12 09:30:59 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ class Contact
 
 	public:
 		Contact(void);
+		virtual	~Contact(void);
+
+		
 		void		setName(std::string name);
 		std::string	getName(void);
 		void		setLastname(std::string lastname);
