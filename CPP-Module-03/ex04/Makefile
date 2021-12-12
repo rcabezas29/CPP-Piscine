@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 20:15:03 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/11 19:20:08 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/12 16:07:34 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = FragTrap
 
 CXX = clang++
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

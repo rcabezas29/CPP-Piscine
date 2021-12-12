@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:30:11 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 19:31:37 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/12 16:15:55 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,25 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include <string>
 
-class	DiamondTrap
+class	DiamondTrap: ScavTrap, FragTrap
 {
-	
+	private:
+		std::string	_name;
+		std::string	_claptrapName;
+		unsigned int	_hitpoints;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage;
+
+	public:
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap &op);
+		virtual	~DiamondTrap(void);
+		DiamondTrap	&operator=(const DiamondTrap &op);
+
+		void	whoAmI(void);
+		
 };
 
 #endif
