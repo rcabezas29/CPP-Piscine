@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 19:25:47 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/10 18:40:45 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/12 15:49:23 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed::Fixed(const int integer)
 Fixed::Fixed(const float floater)
 {
 	//std::cout << "Float constructor called" << std::endl;
-	this->_intVal = (int)(floater * (1 << this->_nbBits));
+	this->_intVal = (floater * (1 << this->_nbBits));
 }
 
 Fixed::~Fixed(void)
