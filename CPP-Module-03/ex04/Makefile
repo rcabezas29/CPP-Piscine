@@ -6,17 +6,17 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 20:15:03 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/11 10:05:45 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/11 19:20:08 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = FragTrap
 
 CXX = clang++
 
 CXXFLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

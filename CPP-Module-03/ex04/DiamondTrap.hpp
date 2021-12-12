@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 10:35:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 10:59:32 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/11 19:30:11 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/11 19:31:37 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DIAMOND_TRAP
+# define DIAMOND_TRAP
+
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class	ScavTrap : public ClapTrap
+class	DiamondTrap
 {
-	private:
-
-	public:
-		ScavTrap(std::string _name);
-		virtual	~ScavTrap(void);
-		ScavTrap &operator=(const ScavTrap &op);
-
-		void	guardGate(void);
+	
 };
+
+#endif

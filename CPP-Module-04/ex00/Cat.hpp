@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 10:35:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 10:59:32 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/11 21:43:01 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/11 21:46:14 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-class	ScavTrap : public ClapTrap
+#include "Animal.hpp"
+#include <sys/types.h>
+
+class	Cat : public Animal
 {
 	private:
+		std::string	_type;
 
 	public:
-		ScavTrap(std::string _name);
-		virtual	~ScavTrap(void);
-		ScavTrap &operator=(const ScavTrap &op);
+		Cat(void);
+		Cat(const Cat &copy);
+		virtual	~Cat(void);
+		Cat	&operator=(const Cat &op);
 
-		void	guardGate(void);
 };
+
+#endif

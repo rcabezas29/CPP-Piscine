@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 10:35:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 10:59:32 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/11 21:04:29 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/11 21:42:52 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-class	ScavTrap : public ClapTrap
+int	main()
 {
-	private:
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	public:
-		ScavTrap(std::string _name);
-		virtual	~ScavTrap(void);
-		ScavTrap &operator=(const ScavTrap &op);
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
 
-		void	guardGate(void);
-};
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+}

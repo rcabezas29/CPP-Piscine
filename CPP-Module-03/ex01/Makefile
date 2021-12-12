@@ -6,22 +6,24 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 20:15:03 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/05 20:30:20 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/11 10:34:52 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
-CFLAGS = -Wall -Werror -Wextra
+CXX = clang++
 
-SRCS = main.cpp ClapTrap.cpp
+CXXFLAGS = -Wall -Werror -Wextra
+
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	clang++ $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
