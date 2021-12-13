@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/08 11:49:17 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/12 09:54:49 by rcabezas         ###   ########.fr        #
+#    Created: 2021/12/05 19:19:41 by rcabezas          #+#    #+#              #
+#    Updated: 2021/12/13 20:16:49 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bsp
 
-CXX = clang++
+CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp Point.cpp Fixed.cpp bsp.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

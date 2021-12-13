@@ -5,18 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 11:49:17 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/12 09:55:21 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/13 19:38:23 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/13 19:57:24 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef POINT_HPP
 # define POINT_HPP
 
-#include <iostream>
 #include "Fixed.hpp"
 
-class	Point
+class Point
 {
 	private:
 		Fixed	_x;
@@ -24,11 +23,16 @@ class	Point
 
 	public:
 		Point(void);
-		Point(const Fixed x, const Fixed y);
+		Point(float x, float y);
 		Point(const Point &copy);
-		virtual	~Point(void);
+		~Point();
 		Point &operator=(const Point &op);
-};
-bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
+		Fixed	getX(void) const;
+		void	setX(Fixed x);
+		Fixed	getY(void) const;
+		void	setY(Fixed y);
+};
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 #endif
