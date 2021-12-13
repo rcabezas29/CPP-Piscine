@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:31:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 20:05:27 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/13 13:42:56 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class	HumanB
 		~HumanB(void);
 
 		void	attack();
-		void	setWeapon(Weapon club);
+		void	setWeapon(Weapon &club);
 };
 
 #endif

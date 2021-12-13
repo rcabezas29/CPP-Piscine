@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:16:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/07 09:32:54 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/13 13:46:29 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Karen
 		void	info(void);
 		void	warning(void);
 		void	error(void);
-		
+
 	public:
 		Karen(void);
 		Karen(const Karen &copy);

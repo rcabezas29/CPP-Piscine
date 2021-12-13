@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:12:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/12 09:51:22 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/13 13:50:19 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "Karen needs only one argument to complain" << std::endl;
+		std::cout << "Karen needs one argument to complain" << std::endl;
 		return (1);
 	}
 	level = take_complain_level((std::string)argv[1]);
