@@ -6,13 +6,13 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/19 07:04:37 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/09 20:27:01 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/13 13:53:34 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
 
-CXX = clang++
+CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Werror -Wextra
 

@@ -6,13 +6,13 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/21 11:31:43 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/08 21:20:09 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/13 13:53:56 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = violence
 
-CXX = clang++
+CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Wextra -Werror
 

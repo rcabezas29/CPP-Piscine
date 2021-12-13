@@ -6,13 +6,13 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/19 07:05:11 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/09 20:26:55 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/13 13:53:47 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie_horde
 
-CXX = clang++
+CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Werror -Wextra
 

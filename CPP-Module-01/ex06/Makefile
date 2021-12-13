@@ -6,13 +6,13 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 21:11:23 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/12 09:51:26 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/13 13:54:18 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = karenFilter
 
-CXX = clang++
+CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Wextra -Werror
 

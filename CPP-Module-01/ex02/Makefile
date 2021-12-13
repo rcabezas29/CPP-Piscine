@@ -6,13 +6,13 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/19 07:05:25 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/12 09:43:44 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/13 13:53:52 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = string
 
-CXX = clang++
+CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Werror -Wextra
 
