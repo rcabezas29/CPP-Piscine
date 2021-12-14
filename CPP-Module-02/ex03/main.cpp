@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 19:24:23 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/13 21:26:20 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:21:08 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main(void)
 	Point	c(10, 0);
 	Point	in(2, 2);
 	Point	out(8, 8);
-	Point	out2(6, 16);
 
 	std::cout << "Is (IN) inside ABC triangle? " << bsp(a, b, c, in) << std::endl;
 	std::cout << "Is (OUT) inside ABC triangle? " << bsp(a, b, c, out) << std::endl;

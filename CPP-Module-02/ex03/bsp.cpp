@@ -6,30 +6,32 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:36:33 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/13 21:26:38 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:18:16 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-Fixed	dotProduct(Point a, Point b)
-{
-	return a.getX() * b.getX() + a.getY() * b.getY();
-}
-
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	Point	AC(c.getX().toFloat() - a.getX().toFloat(), c.getY().toFloat() - a.getY().toFloat());
-	Point	BA(a.getX().toFloat() - b.getX().toFloat(), a.getY().toFloat() - b.getY().toFloat());
-	Point	CB(b.getX().toFloat() - c.getX().toFloat(), b.getY().toFloat() - c.getY().toFloat());
+	Fixed	mAC = (a.getY() - c.getY()) / ((a.getX() - c.getX()));
+	Fixed	mCB = (c.getY() - b.getY()) / ((c.getX() - b.getX()));
+	Fixed	mBA = (b.getY() - a.getY()) / ((b.getX() - a.getX()));
 
-	Point PointC(point.getX().toFloat() - c.getX().toFloat(), point.getY().toFloat() - c.getY().toFloat());
-	Point PointB(point.getX().toFloat() - b.getX().toFloat(), point.getY().toFloat() - b.getY().toFloat());
-	Point PointA(point.getX().toFloat() - a.getX().toFloat(), point.getY().toFloat() - a.getY().toFloat());
+	Fixed	kAC = a.getY() - mAC * a.getX();
+	Fixed	kCB = c.getY() - mCB * c.getX();
+	Fixed	kBA = b.getY() - mBA * b.getX();
 
-	if (dotProduct(AC, PointA) > 0 && dotProduct(BA, PointB) > 0 && dotProduct(CB, PointC) > 0)
-		return true;
-	else
+	Fixed	x = mAC * point.getX() + kAC - point.getY();
+	Fixed	y = mCB * point.getX() + kCB - point.getY();
+	Fixed	z = mBA * point.getX() + kBA < point.getY();
+	
+	if (x > 0)
 		return false;
+	if (y < 0)
+		return false;
+	if (z < 0)
+		return false;
+	return true;
 }

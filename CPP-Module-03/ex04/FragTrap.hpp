@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:20:48 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 19:27:03 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/13 21:34:38 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class	FragTrap : ClapTrap
+class	FragTrap : virtual ClapTrap
 {
 	private:
 

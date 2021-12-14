@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:42:29 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/13 20:17:52 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/14 09:33:54 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@ Point::Point(float x, float y) : _x(x), _y(y)
 	//std::cout << "Constructor called" << std::endl;
 }
 
-Point::Point(const Point &copy)
+Point::Point(const Point &copy) : _x(copy._x), _y(copy._y)
 {
 	//std::cout << "Copy constructor called" << std::endl;
-	this->_x = copy.getX();
-	this->_y = copy.getY();
 }
 
 Point::~Point()
