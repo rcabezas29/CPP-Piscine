@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 21:36:51 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 21:42:21 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:55:47 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	Dog : public Animal
 		virtual	~Dog(void);
 		Dog	&operator=(const Dog &op);
 
-		void	makeSound();
+		void	makeSound() const;
 };
 
 #endif

@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 20:08:00 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/14 20:02:43 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/14 20:37:42 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/14 21:38:20 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongAnimal.hpp"
 
-Cat::Cat(void) : Animal("cat")
+WrongAnimal::WrongAnimal(void)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &copy)
+WrongAnimal::WrongAnimal(std::string type) : _type(type)
+{
+	std::cout << "Constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->setType(copy.getType());
 }
 
-Cat::~Cat(void)
+WrongAnimal::~WrongAnimal(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &op)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &op)
 {
 	std::cout << "Assingation operator called" << std::endl;
 	if (this == &op)
@@ -37,7 +42,17 @@ Cat &Cat::operator=(const Cat &op)
 	return *this;
 }
 
-void		Cat::makeSound(void) const
+std::string	WrongAnimal::getType(void) const
 {
-	std::cout << "Meeooow ... I hate you." << std::endl;
+	return this->_type;
+}
+
+void		WrongAnimal::setType(std::string type)
+{
+	this->_type = type;
+}
+
+void		WrongAnimal::makeSound(void) const
+{
+	std::cout << "Wrong Uncomprehensive sound" << std::endl;
 }
