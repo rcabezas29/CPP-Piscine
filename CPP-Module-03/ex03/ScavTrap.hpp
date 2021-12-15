@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 10:35:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 18:04:35 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 20:31:50 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ class	ScavTrap : virtual public ClapTrap
 		virtual	~ScavTrap(void);
 		ScavTrap &operator=(const ScavTrap &op);
 
+		void	attack(const std::string &target);
 		void	guardGate(void);
 };

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:30:11 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 18:42:34 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 20:20:12 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@
 class	DiamondTrap: public ScavTrap, public FragTrap
 {
 	private:
-		std::string		_name;
-		std::string		_claptrapName;
+		std::string	_name;
 
 	public:
 		DiamondTrap(void);

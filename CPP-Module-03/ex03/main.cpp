@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 20:23:26 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 18:39:08 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 20:30:09 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(void)
 
 	frag.highFivesGuys();
 
+	diamond.attack("Pepe");
 	diamond.whoAmI();
 	return 0;
 }
