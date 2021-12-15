@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:20:23 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 13:03:15 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:31:26 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ FragTrap	&FragTrap::operator=(const FragTrap &op)
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << this->getName() << " says: Does anyone wants to hi five?" << std::endl;
+	std::cout << this->getName() << " says: Does anyone wants to high five?" << std::endl;
 }

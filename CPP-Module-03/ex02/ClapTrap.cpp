@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 20:16:06 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 18:01:28 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:26:35 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) : _name(copy.getName()),
@@ -28,17 +28,17 @@ ClapTrap::ClapTrap(const ClapTrap &copy) : _name(copy.getName()),
 	_energyPoints(copy.getEnergyPoints()),
 	_attackDamage(copy.getAttackDamage())
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &op)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "ClapTrap assignation operator called" << std::endl;
 	if (this == &op)
 		return *this;
     return *this;
@@ -93,11 +93,10 @@ void	ClapTrap::attack(std::string const &target) const
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	this->setEnergyPoints(this->getEnergyPoints() - amount);
-	if (this->getEnergyPoints() < 0)
-	{
+	if (this->getEnergyPoints() < amount)
 		this->setEnergyPoints(0);
-	}
+	else
+		this->setEnergyPoints(this->getEnergyPoints() - amount);
 	std::cout << this->getName() << " received " << amount << " damage points and it is now " << this->getEnergyPoints() << " HPs." << std::endl;
 }
 

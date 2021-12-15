@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 20:16:06 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 18:10:40 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:21:14 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->getEnergyPoints() < amount)
 		this->setEnergyPoints(0);
-	this->setEnergyPoints(this->getEnergyPoints() - amount);
+	else
+		this->setEnergyPoints(this->getEnergyPoints() - amount);
 	std::cout << this->getName() << " received " << amount << " damage points and it is now " << this->getEnergyPoints() << " HPs." << std::endl;
 }
 
