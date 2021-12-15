@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 20:16:26 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 12:10:44 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:03:14 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class	ClapTrap
 {
-	private:
+	protected:
 		std::string				_name;
 		unsigned int			_hitPoints;
 		unsigned int			_energyPoints;
