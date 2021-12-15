@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:20:48 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/13 21:37:02 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 13:03:56 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class	FragTrap : public ClapTrap
 	private:
 
 	public:
+		FragTrap(void);
 		FragTrap(std::string _name);
+		FragTrap(const FragTrap &copy);
 		virtual	~FragTrap(void);
 		FragTrap &operator=(const FragTrap &op);
 

@@ -6,12 +6,17 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 10:36:13 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 18:59:58 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 13:00:00 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+
+ScavTrap::ScavTrap(void)
+{
+	std::cout << "ScavTrap Default constructor called" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 {
@@ -19,6 +24,15 @@ ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
 	this->setAttackDamage(20);
+}
+
+ScavTrap::ScavTrap(const ScavTrap &copy)
+{
+	std::cout << "ScavTrap Copy constructor called" << std::endl;
+	this->setName(copy.getName());
+	this->setHitPoints(copy.getHitPoints());
+	this->setEnergyPoints(copy.getEnergyPoints());
+	this->setAttackDamage(copy.getAttackDamage());
 }
 
 ScavTrap::~ScavTrap(void)

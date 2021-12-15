@@ -6,11 +6,16 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:20:23 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 19:29:12 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:40:34 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(void)
+{
+	std::cout << "FragTrap Default constructor called" << std::endl;
+}
 
 FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 {

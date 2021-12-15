@@ -6,11 +6,16 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:20:23 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/11 19:29:12 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/15 13:03:15 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(void)
+{
+	std::cout << "FragTrap default constructor called" << std::endl;
+}
 
 FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 {
@@ -18,6 +23,15 @@ FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 	this->setHitPoints(100);
 	this->setEnergyPoints(100);
 	this->setAttackDamage(30);
+}
+
+FragTrap::FragTrap(const FragTrap &copy)
+{
+	std::cout << "FragTrap constructor called" << std::endl;
+	this->setName(copy.getName());
+	this->setHitPoints(copy.getHitPoints());
+	this->setEnergyPoints(copy.getEnergyPoints());
+	this->setAttackDamage(copy.getEnergyPoints());
 }
 
 FragTrap::~FragTrap(void)

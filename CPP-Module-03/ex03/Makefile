@@ -6,11 +6,11 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 20:15:03 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/12 16:07:34 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/15 09:07:09 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = DiamondTrap
 
 CXX = clang++
 
