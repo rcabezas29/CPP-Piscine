@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 19:56:11 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/15 20:46:16 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/16 09:15:42 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

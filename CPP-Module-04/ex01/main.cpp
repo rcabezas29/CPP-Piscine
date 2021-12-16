@@ -6,13 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 21:04:29 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/14 21:37:10 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/16 09:29:58 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -21,8 +19,17 @@ int	main(void)
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	const WrongAnimal* wrong_meta = new WrongAnimal();
-	const WrongAnimal* not_i = new WrongCat();
+	
+	Animal	*farm[20];
+
+	for (int i = 0; i < 20; i++)
+	{
+		if (i < 10)
+			farm[i] = new Cat();
+		if (i >= 10)
+			farm[i] = new Dog();
+	}
+		
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
@@ -31,7 +38,7 @@ int	main(void)
 	j->makeSound();
 	meta->makeSound();
 
-	std::cout << not_i->getType() << " " << std::endl;
-	not_i->makeSound();
-	wrong_meta->makeSound();
+	for (int i = 0; i < 20; i++)
+		delete farm[i];
+	return 0;
 }
