@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:08:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 21:18:23 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:06:01 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,27 @@ Dog::~Dog(void)
 	delete this->_brain;
 }
 
-Dog &Dog::operator=(const Dog &copy)
+Dog &Dog::operator=(const Dog &op)
 {
 	std::cout << "Assingation operator called" << std::endl;
-	if (this == &copy)
+	if (this == &op)
 		return *this;
-	this->setType(copy.getType());
+	this->setType(op.getType());
+	*(this->_brain) = *(op._brain);
 	return *this;
 }
 
 void		Dog::makeSound(void) const
 {
 	std::cout << "Woooof ... I love you." << std::endl;
+}
+
+Brain	*Dog::getBrain(void) const
+{
+	return this->_brain;
+}
+
+void	Dog::setBrain(Brain *brain)
+{
+	this->_brain = brain;
 }

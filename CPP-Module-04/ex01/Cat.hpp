@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 21:43:01 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 21:15:52 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:03:56 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class	Cat : public Animal
 {
 	private:
-		std::string	_type;
 		Brain		*_brain;
 
 	public:
@@ -31,6 +30,8 @@ class	Cat : public Animal
 		Cat	&operator=(const Cat &op);
 
 		void	makeSound(void) const;
+		Brain	*getBrain(void) const;
+		void	setBrain(Brain *brain);
 };
 
 #endif

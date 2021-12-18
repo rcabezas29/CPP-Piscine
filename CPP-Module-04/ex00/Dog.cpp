@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:08:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/14 20:30:50 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/18 19:54:48 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ Dog::~Dog(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &copy)
+Dog &Dog::operator=(const Dog &op)
 {
 	std::cout << "Assingation operator called" << std::endl;
-	if (this == &copy)
+	if (this == &op)
 		return *this;
-	this->setType(copy.getType());
+	this->setType(op.getType());
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 21:36:51 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 21:16:03 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:05:29 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class	Dog : public Animal
 		Dog	&operator=(const Dog &op);
 
 		void	makeSound() const;
+		Brain	*getBrain(void) const;
+		void	setBrain(Brain *brain);
 };
 
 #endif

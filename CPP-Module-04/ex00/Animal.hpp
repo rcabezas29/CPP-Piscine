@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 21:05:43 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/14 19:41:42 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:06:33 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class	Animal
 {
-	private:
+	protected:
 		std::string	_type;
 
 	public:

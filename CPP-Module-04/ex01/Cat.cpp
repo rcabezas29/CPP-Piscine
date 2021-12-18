@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:08:00 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/15 21:18:17 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:05:19 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,21 @@ Cat &Cat::operator=(const Cat &op)
 	if (this == &op)
 		return *this;
 	this->setType(op.getType());
+	*(this->_brain) = *(op._brain);
 	return *this;
 }
 
 void		Cat::makeSound(void) const
 {
 	std::cout << "Meeooow ... I hate you." << std::endl;
+}
+
+Brain	*Cat::getBrain(void) const
+{
+	return this->_brain;
+}
+
+void	Cat::setBrain(Brain *brain)
+{
+	this->_brain = brain;
 }
