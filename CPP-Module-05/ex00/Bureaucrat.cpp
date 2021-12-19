@@ -6,11 +6,12 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:53:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/19 12:15:59 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/19 12:32:02 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include <ostream>
 
 Bureaucrat::Bureaucrat(void)
 {
@@ -63,4 +64,10 @@ void	Bureaucrat::decreaseGrade(int decrement)
 	this->_grade += decrement;
 	if (this->_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &instance)
+{
+	out << "Bureaucrat " << instance.getName() << "with grade " << instance.getGrade() << std::endl;
+	return out;
 }

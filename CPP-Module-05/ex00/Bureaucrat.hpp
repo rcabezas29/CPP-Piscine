@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:53:05 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/19 12:08:31 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/19 12:30:45 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ class	Bureaucrat
 		};
 };
 
-std::ostream	&operator<<(std::ostream &os, const Bureaucrat &instance);
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &instance);
 
 #endif
