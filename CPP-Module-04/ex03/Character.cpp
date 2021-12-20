@@ -6,25 +6,26 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 12:14:50 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/20 12:56:41 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/20 19:31:12 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include <stdio.h>
 
 Character::Character(void) : _name(""), _equipedMateria(0)
 {
-	std::cout << "Character default constructor called" << std::endl;
+	//std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::Character(std::string name) : _name(name), _equipedMateria(0)
 {
-	std::cout << "Character constructor called" << std::endl;
+	//std::cout << "Character constructor called" << std::endl;
 }
 
 Character::Character(const Character &copy)
 {
-	std::cout << "Character copy constructor called" << std::endl;
+	//std::cout << "Character copy constructor called" << std::endl;
 	this->_name = copy.getName();
 	for (int i = 0; i < _equipedMateria; i++)
 		this->_inventory[i] = copy._inventory[i];
@@ -33,8 +34,9 @@ Character::Character(const Character &copy)
 
 Character::~Character(void)
 {
-	std::cout << "Character destructor called" << std::endl;
-	//delete[] this->_inventory;
+	//std::cout << "Character destructor called" << std::endl;
+	for (int i = 0; i < this->_equipedMateria; i++)
+		delete this->_inventory[i];
 }
 
 Character	&Character::operator=(const Character &op)

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:24:56 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/20 11:36:27 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/20 18:34:21 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@ class AMateria
 		std::string	_type;
 
 	public:
-		AMateria(void);
 		AMateria(std::string const &type);
-		AMateria(const AMateria &copy);
 		virtual	~AMateria(void);
-		AMateria	&operator=(const AMateria &op);
+		//AMateria	&operator=(const AMateria &op);
 	
 		std::string const	&getType(void) const; //Returns the materia type
 

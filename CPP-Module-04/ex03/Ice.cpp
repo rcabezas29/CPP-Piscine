@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 12:59:36 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/20 13:00:28 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/20 19:29:21 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 #include "ICharacter.hpp"
 #include <ostream>
 
-Ice::Ice(void) : AMateria("Ice")
+Ice::Ice(void) : AMateria("ice")
 {
-	std::cout << "Ice default constructor called" << std::endl;
+	//std::cout << "Ice default constructor called" << std::endl;
+	this->_type = "ice";
 }
 
 Ice::Ice(std::string type) : AMateria(type)
 {
-	std::cout << "Ice constructor called" << std::endl;
+	//std::cout << "Ice constructor called" << std::endl;
+	this->_type = type;
 }
 
-Ice::Ice(const Ice &copy)
+Ice::Ice(const Ice &copy) : AMateria(copy.getType())
 {
-	std::cout << "Ice copy constructor called" << std::endl;
+	//std::cout << "Ice copy constructor called" << std::endl;
 	this->_type = copy.getType();
 }
 
 Ice::~Ice(void)
 {
-	std::cout << "Ice destructor called" << std::endl;
+	//std::cout << "Ice destructor called" << std::endl;
 }
 
 Ice	&Ice::operator=(const Ice &op)
@@ -50,5 +52,5 @@ AMateria	*Ice::clone(void) const
 
 void	Ice::use(ICharacter &target)
 {
-	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
