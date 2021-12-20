@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:42:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/18 21:44:43 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/20 12:14:32 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define ICHARACTER_HPP
 
 #include <iostream>
-#include "AMateria.hpp"
+
+class	AMateria;
 
 class ICharacter
 {

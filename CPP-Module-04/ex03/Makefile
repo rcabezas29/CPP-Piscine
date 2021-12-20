@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/18 21:20:49 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/18 21:21:48 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/20 14:07:00 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = clang++ --std=c++98
 
 CXXFLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
