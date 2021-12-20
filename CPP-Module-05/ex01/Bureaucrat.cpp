@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:53:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/20 19:37:04 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/20 22:04:35 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,11 @@ void	Bureaucrat::decreaseGrade(int decrement)
 	this->_grade += decrement;
 	if (this->_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(void)
+{
+	std::cout << "" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &instance)
