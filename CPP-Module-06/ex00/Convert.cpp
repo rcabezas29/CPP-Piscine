@@ -6,11 +6,12 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:38:42 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/19 19:42:02 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:02:01 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
+#include <cctype>
 #include <cstdlib>
 
 Convert::Convert(void)
@@ -18,14 +19,17 @@ Convert::Convert(void)
 	std::cout << "Convert default constructor called" << std::endl;
 }
 
-Convert::Convert(std::string arg)
+Convert::Convert(char *arg)
 {
 	
 	std::cout << "Convert constructor called" << std::endl;
-	this->_floater = std::stof(arg);
-	this->_integer = std::stoi(arg);
-	this->_character = (char)this->_integer;
-	this->_dbl = (double)this->_integer;
+	this->_floater = std::atof(arg);
+	this->_integer = std::atoi(arg);
+	if (std::isprint(this->_integer))
+		this->_character = (char)this->_integer;
+	else
+		this->_character = "Non printable";
+	this->_dbl = (double)this->_floater;
 }
 
 Convert::Convert(const Convert &copy)

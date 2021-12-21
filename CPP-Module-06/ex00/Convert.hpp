@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 12:39:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/19 18:40:59 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:00:54 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 class	Convert
 {
 	private:
-		int		_integer;
-		float	_floater;
-		char 	_character;
-		double	_dbl;
+		int				_integer;
+		float			_floater;
+		std::string 	_character;
+		double			_dbl;
 
 	public:
 		Convert(void);
-		Convert(std::string arg);
+		Convert(char *arg);
 		Convert(const Convert &copy);
 		~Convert(void);
 		Convert	&operator=(const Convert &op);
