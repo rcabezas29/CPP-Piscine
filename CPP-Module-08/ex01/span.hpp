@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 20:57:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/22 09:07:42 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/22 09:09:58 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/22 10:03:49 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <vector>
 #include <iostream>
-#include "easyfind.hpp"
 
-int	main(void)
+class Span
 {
-	std::vector<int>	v;
+	private:
+		unsigned int 	_size;
+		int				*_values;
+		int				_assignedValues;
 
-	for (int i = 0; i < 5; i++)
-		v.push_back(i * 2);
+	public:
+		Span(unsigned int n);
+		Span(const Span &copy);
+		~Span(void);
+		Span	&operator=(const Span &op);
 
-	try
-	{
-		easyfind(v, 7);
-	}
-	catch (int)
-	{
-		std::cout << "The number couldn't be find" << std::endl;
-	}
-
-	return 0;
-}
+		void			addNumber(int n);
+		unsigned int	shortestSpan(void) const;
+		unsigned int	longestSpan(void) const;
+};
