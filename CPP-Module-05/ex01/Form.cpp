@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 20:19:26 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/21 12:28:14 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 10:15:40 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,21 @@ int			Form::getGradeToExe(void) const
 
 void	Form::beSigned(Bureaucrat &bureaucrat)
 {
-	if (bureaucrat.getGrade() >= this->getGradeToSign())
-	{
-		this->_signed = true;
-		bureaucrat.signForm();
-	}
+	if (bureaucrat.getGrade() > this->getGradeToSign())
+		throw Form::GradeTooLowException();
 	else
-		throw Form::GradeTooHighException();
+	{
+		bureaucrat.signForm(*this);
+		this->_signed = true;
+	}
+}
+
+std::ostream	&operator<<(std::ostream &out, const Form &instance)
+{
+	out << instance.getName() << " with sign grade " << instance.getGradeToSign() <<
+		" and execute grade " << instance.getGradeToExe();
+	if (instance.getSignState())
+		std::cout << " is signed" << std::endl;
+	else
+		std::cout << " isn't signed" << std::endl;
 }

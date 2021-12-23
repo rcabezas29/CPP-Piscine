@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:08:00 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/14 20:02:43 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 10:52:33 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Cat::Cat(void) : Animal("cat")
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Cat copy constructor called" << std::endl;
 	this->setType(copy.getType());
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &op)
 {
-	std::cout << "Assingation operator called" << std::endl;
+	std::cout << "Cat assingation operator called" << std::endl;
 	if (this == &op)
 		return *this;
 	this->setType(op.getType());

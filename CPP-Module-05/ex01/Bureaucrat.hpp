@@ -6,17 +6,17 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:53:05 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/21 12:40:42 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 10:35:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#pragma once
 
 #include <exception>
 #include <iostream>
 #include <ostream>
 #include <string>
+#include "Form.hpp"
 
 class	Bureaucrat
 {
@@ -53,9 +53,14 @@ class	Bureaucrat
 			}
 		};
 
-		void	signForm(void);
+		class	NotAbleToSignException : public std::exception
+		{
+			virtual const char * what() const throw()
+			{
+				return "<bureaucrat> cannot sign <form> because <reason>";
+			}
+		};
+
+		void	signForm(Form &form);
 };
-
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &instance);
-
-#endif

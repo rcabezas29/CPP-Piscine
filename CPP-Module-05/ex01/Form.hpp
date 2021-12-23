@@ -6,9 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 19:40:18 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/20 22:05:11 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 10:32:57 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include "Bureaucrat.hpp"
 #include <exception>

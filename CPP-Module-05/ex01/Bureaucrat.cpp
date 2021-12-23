@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:53:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/21 12:42:05 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 10:15:29 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,12 @@ void	Bureaucrat::decreaseGrade(int decrement)
 		throw Bureaucrat::GradeTooLowException();
 }
 
-void	Bureaucrat::signForm(void)
+void	Bureaucrat::signForm(Form &form)
 {
-	std::cout << this->_name <<" signed the form" << std::endl;
+	if (this->getGrade() >= form.getGradeToSign())
+		std::cout << this->getName() << " signs "  << form.getName() << std::endl;
+	else
+		throw Bureaucrat::NotAbleToSignException();
 }
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &instance)

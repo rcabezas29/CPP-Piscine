@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 21:36:51 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/18 20:05:29 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 10:55:04 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class	Dog : public Animal
 {
 	private:
-		std::string	_type;
 		Brain		*_brain;
 
 	public:

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:07:39 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/18 21:09:48 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 11:01:46 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 AAnimal::~AAnimal(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "AAnimal destructor called" << std::endl;
 }
 
 AAnimal &AAnimal::operator=(const AAnimal &op)
 {
-	std::cout << "Assingation operator called" << std::endl;
+	std::cout << "AAnimal assingation operator called" << std::endl;
 	if (this == &op)
 		return *this;
 	this->setType(op.getType());

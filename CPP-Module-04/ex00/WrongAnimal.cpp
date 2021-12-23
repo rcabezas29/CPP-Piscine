@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:37:42 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/14 21:38:20 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/23 10:53:34 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 WrongAnimal::WrongAnimal(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 	this->setType(copy.getType());
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &op)
 {
-	std::cout << "Assingation operator called" << std::endl;
+	std::cout << "WrongAnimal assingation operator called" << std::endl;
 	if (this == &op)
 		return *this;
 	this->setType(op.getType());
