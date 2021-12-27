@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:08:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/23 10:57:04 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/27 19:53:30 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Dog::Dog(const Dog &copy)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	this->setType(copy.getType());
+	*(this->_brain) = *(copy._brain);
 }
 
 Dog::~Dog(void)

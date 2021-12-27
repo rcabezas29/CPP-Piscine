@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:08:00 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/23 11:02:08 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/27 19:52:55 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Cat::Cat(const Cat &copy)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	this->setType(copy.getType());
+	*(this->_brain) = *(copy._brain);
 }
 
 Cat::~Cat(void)
