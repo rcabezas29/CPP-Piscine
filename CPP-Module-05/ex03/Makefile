@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 09:43:25 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/27 19:06:47 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/27 19:47:15 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXX = clang++
 CXXFLAGS = -Wall -Werror -Wextra -I .
 
 SRCS = main.cpp Bureaucrat.cpp Form.cpp forms/PresidentialPardonForm.cpp \
-		forms/RobotomyRequestForm.cpp forms/ShrubberyCreationForm.cpp
+		forms/RobotomyRequestForm.cpp forms/ShrubberyCreationForm.cpp Intern.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

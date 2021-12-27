@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 12:06:40 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/27 19:05:55 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/27 09:05:05 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/27 19:30:53 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 
-class ShrubberyCreationForm : public Form
+int	main(void)
 {
-	public:
-		ShrubberyCreationForm(std::string target);
-		virtual ~ShrubberyCreationForm(void);
-		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &op);
+	Intern someRandomIntern;
+	Form* rrf;
 
-		void	execute(const Bureaucrat &executor) const;
-};
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+}
