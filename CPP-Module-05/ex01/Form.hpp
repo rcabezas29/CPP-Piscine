@@ -5,36 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 19:40:18 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/23 10:32:57 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/27 09:44:03 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/27 12:01:25 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FORM_HPP
+# define FORM_HPP
 
-#include "Bureaucrat.hpp"
-#include <exception>
 #include <iostream>
 #include <string>
+#include "Bureaucrat.hpp"
 
-class	Form
+class Bureaucrat;
+
+class Form
 {
 	private:
 		const std::string	_name;
 		bool				_signed;
-		const int			_gradeToSing;
+		const int			_gradeToSign;
 		const int			_gradeToExecute;
 
 	public:
-		Form(std::string name, int sign, int exe);
+		Form(std::string name, int gradeToSign, int gradeToExecute);
 		Form(const Form &copy);
-		~Form(void);
-		Form	&operator=(const Form &op);
+		virtual ~Form(void);
 
-		std::string	getName(void) const;
-		bool		getSignState(void) const;
-		int			getGradeToSign(void) const;
-		int			getGradeToExe(void) const;
+		const std::string	getName(void) const;
+		bool				getSigned(void) const;
+		int					getGradeToSign(void) const;
+		int					getGradeToExecute(void) const;
+
+		void	beSigned(Bureaucrat &bureaucrat);
 
 		class	GradeTooHighException : public std::exception
 		{
@@ -48,10 +51,11 @@ class	Form
 		{
 			virtual const char * what() const throw()
 			{
-				return "The form grade was too high";
+				return "The form grade was too low";
 			}
 		};
-
-		void	beSigned(Bureaucrat &bureaucrat);
 };
+
 std::ostream	&operator<<(std::ostream &out, const Form &instance);
+
+#endif

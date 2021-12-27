@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/18 21:53:09 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/21 12:46:51 by rcabezas         ###   ########.fr        #
+#    Created: 2021/12/27 09:43:25 by rcabezas          #+#    #+#              #
+#    Updated: 2021/12/27 15:54:58 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,9 @@ NAME = bureaucrat
 
 CXX = clang++
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -I .
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardon.cpp RobotomyRequestForm.cpp \
-		ShrubberryCreationForm.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp forms/PresidentialPardonForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

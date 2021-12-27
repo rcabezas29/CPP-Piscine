@@ -5,43 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/18 21:53:05 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/21 12:40:42 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/27 09:02:38 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/27 15:56:26 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <exception>
 #include <iostream>
-#include <ostream>
-#include <string>
+
+class Form;
 
 class	Bureaucrat
 {
 	private:
-		const std::string	_name;
-		int					_grade;
+		std::string		_name;
+		int	_grade;
 
 	public:
-		Bureaucrat(void);
-		Bureaucrat(const std::string name, int grade);
+		Bureaucrat(const std::string name, int level);
 		Bureaucrat(const Bureaucrat &copy);
-		~Bureaucrat(void);
-		Bureaucrat	&operator=(const Bureaucrat &op);
-	
-		int	getGrade(void) const;
-		const std::string	getName(void) const;
-		
+		virtual	~Bureaucrat(void);
+		Bureaucrat &operator=(const Bureaucrat &op);
+
+		const std::string		getName(void) const;
+		int			getGrade(void) const;
+
 		void	increaseGrade(int increment);
 		void	decreaseGrade(int decrement);
+
+		void	signForm(Form &form);
 
 		class	GradeTooHighException : public std::exception
 		{
 			virtual const char * what() const throw()
 			{
-				return "The grade was too high";
+				return "The bureaucrat grade was too high";
 			}
 		};
 
@@ -49,11 +49,9 @@ class	Bureaucrat
 		{
 			virtual const char * what() const throw()
 			{
-				return "The grade was too high";
+				return "The bureaucrat grade was too low";
 			}
 		};
-
-		void	signForm(void);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &instance);

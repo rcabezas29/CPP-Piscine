@@ -5,35 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/18 21:53:05 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/19 12:30:45 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/12/27 09:02:38 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/12/27 09:40:25 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <exception>
 #include <iostream>
-#include <ostream>
-#include <string>
 
 class	Bureaucrat
 {
 	private:
-		const std::string	_name;
-		int					_grade;
+		std::string		_name;
+		int	_grade;
+		
 
 	public:
-		Bureaucrat(void);
-		Bureaucrat(const std::string name, int grade);
+		Bureaucrat(const std::string name, int level);
 		Bureaucrat(const Bureaucrat &copy);
-		~Bureaucrat(void);
-		Bureaucrat	&operator=(const Bureaucrat &op);
-	
-		int	getGrade(void) const;
-		const std::string	getName(void) const;
-		
+		virtual	~Bureaucrat(void);
+		Bureaucrat &operator=(const Bureaucrat &op);
+
+		const std::string		getName(void) const;
+		int			getGrade(void) const;
+
 		void	increaseGrade(int increment);
 		void	decreaseGrade(int decrement);
 
@@ -49,7 +46,7 @@ class	Bureaucrat
 		{
 			virtual const char * what() const throw()
 			{
-				return "The grade was too high";
+				return "The grade was too low";
 			}
 		};
 };
