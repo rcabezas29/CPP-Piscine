@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 09:43:47 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/27 17:03:23 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/28 17:54:33 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,9 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 
 void	Form::execute(Bureaucrat const & executor) const
 {
-	if (executor.getGrade() > this->getGradeToExecute())
+	if (this->_signed == false)
+		throw Form::NotSignedException();
+	else if (executor.getGrade() > this->getGradeToExecute())
 		throw Form::GradeTooHighException();
 	else
 		std::cout << "Executed " << this->getName() << std::endl;
