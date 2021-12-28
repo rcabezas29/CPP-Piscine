@@ -6,12 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 12:12:43 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/27 19:18:53 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/28 09:05:12 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-#include <fstream>
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardon", 25, 5)
 {
@@ -41,39 +40,5 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	Form::execute(executor);
-	std::fstream file;
-
-	file.open(this->_target + "_shrubbery", std::fstream::out);
-	if(file.is_open())
-	{
-		file << "                                                         ." << std::endl;
-        file << "                                              .         ;" << std::endl;
-        file << "                 .              .              ;%     ;; " << std::endl;
-        file << "                   ,           ,                :;%  %;" << std::endl;
-        file << "                    :         ;                   :;%;'     ., " << std::endl;
-        file << "           ,.        %;     %;            ;        %;'    ,;" << std::endl;
-        file << "             ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
-        file << "              %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
-        file << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
-        file << "                `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
-        file << "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
-        file << "                    `:%;.  :;bd%;          %;@%;'" << std::endl;
-        file << "                      `@%:.  :;%.         ;@@%;' " << std::endl;
-        file << "                        `@%.  `;@%.      ;@@%;  " << std::endl;
-		file << "                          `@%%. `@%%    ;@@%;" << std::endl;
-		file << "                            ;@%. :@%%  %@@%;" << std::endl;
-		file << "                              %@bd%%%bd%%:;" << std::endl;
-		file << "                                #@%%%%%:;;" << std::endl;
-		file << "                                %@@%%%::;" << std::endl;
-		file << "                                %@@@%(o);  . '" << std::endl;
-		file << "                                %@@@o%;:(.,'" << std::endl;
-		file << "                            `.. %@@@o%::; " << std::endl;
-		file << "                               `)@@@o%::;" << std::endl;
-		file << "                                %@@(o)::;" << std::endl;
-		file << "                               .%@@@@%::; " << std::endl;
-		file << "                               ;%@@@@%::;." << std::endl;
-		file << "                              ;%@@@@%%:;;;." << std::endl;
-		file << "                          ...;%@@@@@%%:;;;;,.." << std::endl;
-		file.close();
-	}
+	std::cout << this->_target << " has been pardoned by Perro Sanche." << std::endl;
 }

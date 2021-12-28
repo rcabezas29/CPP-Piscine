@@ -6,11 +6,12 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 12:13:55 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/27 19:20:09 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/28 09:03:43 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberryCreation", 145, 137)
@@ -41,6 +42,39 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
 	Form::execute(executor);
-	std::cout << "* Drilling noises *" << std::endl;
-	std::cout << this->_target << " has been robotomized successfully 50% of the time." << std::endl;
+	std::fstream file;
+
+	file.open(this->_target + "_shrubbery", std::fstream::out);
+	if(file.is_open())
+	{
+		file << "                                                         ." << std::endl;
+        file << "                                              .         ;" << std::endl;
+        file << "                 .              .              ;%     ;; " << std::endl;
+        file << "                   ,           ,                :;%  %;" << std::endl;
+        file << "                    :         ;                   :;%;'     ., " << std::endl;
+        file << "           ,.        %;     %;            ;        %;'    ,;" << std::endl;
+        file << "             ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
+        file << "              %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+        file << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+        file << "                `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
+        file << "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+        file << "                    `:%;.  :;bd%;          %;@%;'" << std::endl;
+        file << "                      `@%:.  :;%.         ;@@%;' " << std::endl;
+        file << "                        `@%.  `;@%.      ;@@%;  " << std::endl;
+		file << "                          `@%%. `@%%    ;@@%;" << std::endl;
+		file << "                            ;@%. :@%%  %@@%;" << std::endl;
+		file << "                              %@bd%%%bd%%:;" << std::endl;
+		file << "                                #@%%%%%:;;" << std::endl;
+		file << "                                %@@%%%::;" << std::endl;
+		file << "                                %@@@%(o);  . '" << std::endl;
+		file << "                                %@@@o%;:(.,'" << std::endl;
+		file << "                            `.. %@@@o%::; " << std::endl;
+		file << "                               `)@@@o%::;" << std::endl;
+		file << "                                %@@(o)::;" << std::endl;
+		file << "                               .%@@@@%::; " << std::endl;
+		file << "                               ;%@@@@%::;." << std::endl;
+		file << "                              ;%@@@@%%:;;;." << std::endl;
+		file << "                          ...;%@@@@@%%:;;;;,.." << std::endl;
+		file.close();
+	}
 }

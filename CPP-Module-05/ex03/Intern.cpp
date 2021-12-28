@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 19:32:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/27 19:49:37 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/28 08:55:03 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+
+Form	*createPresidentialPardonForm(std::string const & target);
+Form	*createRobotomyRequestForm(std::string const & target);
+Form	*createShrubberyCreationForm(std::string const & target);
 
 Intern::Intern(void)
 {
@@ -34,6 +38,8 @@ Intern::~Intern(void)
 Intern	&Intern::operator=(const Intern &op)
 {
 	std::cout << "Intern assignation operator called" << std::endl;
+	if (this == &op)
+		return *this;
 	return *this;
 }
 
@@ -41,22 +47,24 @@ Intern	&Intern::operator=(const Intern &op)
 Form	*Intern::makeForm(std::string form, std::string target) const
 {
 	std::string	forms[3] = {"robotomy request", "shrubberry creation", "presidential pardon"};
-	Form		*(*f[4])(std::string);
+	Form		*(*f[3])(const std::string &);
 	Form		*ret;
 
-	f[0] = &createRobotomyRequestForm(target);
-	f[1] = &createShrubberyCreationForm(target);
-	f[2] = &createPresidentialPardonForm(target);
+	f[0] = &createRobotomyRequestForm;
+	f[1] = &createShrubberyCreationForm;
+	f[2] = &createPresidentialPardonForm;
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		if (forms[i] == form)
 		{
-			ret = (*f[i])(target);
+			ret = (f[i])(target);
+			std::cout << "Intern created " << ret->getName() << std::endl;
 			return ret;
 		}
 	}
 	std::cout << "Intern wasn't able to create that function" << std::endl;
+	return NULL;
 }
 
 Form	*createPresidentialPardonForm(std::string const & target)
