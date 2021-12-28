@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 19:32:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/28 08:55:03 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/28 19:45:48 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ Form	*Intern::makeForm(std::string form, std::string target) const
 			return ret;
 		}
 	}
-	std::cout << "Intern wasn't able to create that function" << std::endl;
-	return NULL;
+	throw Intern::UnknownFormException();
 }
 
 Form	*createPresidentialPardonForm(std::string const & target)

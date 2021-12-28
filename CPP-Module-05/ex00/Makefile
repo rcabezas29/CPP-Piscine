@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 09:43:33 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/27 09:43:41 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/28 19:43:57 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = clang++
 
 CXXFLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
