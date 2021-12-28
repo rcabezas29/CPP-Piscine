@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 09:44:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/28 17:54:14 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/28 18:05:01 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Form
 
 		void	beSigned(Bureaucrat &bureaucrat);
 
-		virtual void	execute(Bureaucrat const & executor) const;
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 		class	GradeTooHighException : public std::exception
 		{
