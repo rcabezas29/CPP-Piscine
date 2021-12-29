@@ -6,31 +6,52 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 20:56:29 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/19 21:09:05 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:42:21 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
-
 #include <iostream>
-#include <array>
 
 template<typename T>
 class	Array
 {
 	private:
-		T	_array[];
+		T	*_array;
 
 	public:
-		Array(void);
-		Array(unsigned int n);
-		Array(const Array &copy);
-		~Array(void);
-		Array	&operator=(const Array &op);
-		Array	&operator[](size_t pos);
+		Array(void) : _array(new T[1]) {this->_array[0] = 0;}
+		Array(unsigned int n) : _array(new T[n + 1]){this->_array[n] = 0;}
+		Array(const Array &copy) : _array(copy._array){}
+		virtual ~Array(void) {delete[] this->_array;}
+		Array	&operator=(const Array &op)
+		{
+			if (this == &op)
+				return *this;
+			this->_array = op._array;
+			return *this;
+		}
+		T	&operator[](size_t pos)
+		{
+			if (static_cast<int>(pos) > this->size() || pos < 0)
+				throw PositionAccessException();
+			return this->_array[pos];
+		}
+		
+		int	size(void) const
+		{
+			int i;
 
-		int	size(void) const;
+			i = 0;
+			while (this->_array[i] != 0)
+				i++;
+			return i;
+		}
+
+		class	PositionAccessException : public std::exception
+		{
+			virtual const char * what() const throw()
+			{
+				return "Impossible to get that position";
+			}
+		};
 };
-
-#endif
