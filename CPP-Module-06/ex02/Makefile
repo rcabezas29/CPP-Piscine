@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 20:46:51 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/21 20:47:23 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/29 09:25:46 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = identify
 
 CXX = clang++
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = main.cpp Base.cpp
 

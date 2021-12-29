@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 19:53:22 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/21 20:08:02 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/29 09:24:16 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = serialize
 
 CXX = clang++
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = main.cpp Data.cpp
 

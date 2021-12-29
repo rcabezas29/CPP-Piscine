@@ -6,16 +6,16 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 20:56:31 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/21 20:57:01 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/29 09:26:48 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = easyfind
 
-CXX = clang++ --std=c++98
+CXX = clang++
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = main.cpp
 

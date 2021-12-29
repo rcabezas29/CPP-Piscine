@@ -6,15 +6,15 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/19 20:56:44 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/19 20:56:49 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/29 09:25:10 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = array
 
-CXX = clang++ --std=c++98
+CXX = clang++
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = main.cpp
 
