@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 20:23:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/21 20:53:21 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:19:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	identify(Base *p)
 		std::cout << "It's type B" << std::endl;
 	else if (dynamic_cast<C*>(p) != NULL)
 		std::cout << "It's type C" << std::endl;
+	else
+		throw "Didn't find the type";
 }
 
 Base	*generate(void)
@@ -29,7 +31,7 @@ Base	*generate(void)
 	int	x;
 	Base	*ret;
 
-	x = rand() % 3 + 1;
+	x = 3;
 	switch (x)
 	{
 		case 1:
@@ -56,9 +58,17 @@ Base	*generate(void)
 
 int	main(void)
 {
-	Base	*checkType;
+	try
+	{
+		Base	*checkType;
 
-	checkType = generate();
-	identify(checkType);
+		checkType = generate();
+		identify(checkType);
+	}
+	catch (const char *error)
+	{
+		std::cout << error << '\n';
+	}
+	
 	return 0;
 }

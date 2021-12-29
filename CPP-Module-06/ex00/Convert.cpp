@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:38:42 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/21 13:02:01 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:10:26 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@ Convert::Convert(void)
 
 Convert::Convert(char *arg)
 {
-	
 	std::cout << "Convert constructor called" << std::endl;
 	this->_floater = std::atof(arg);
 	this->_integer = std::atoi(arg);
-	if (std::isprint(this->_integer))
-		this->_character = (char)this->_integer;
+	if (this->_integer == 0 && arg[0] != '0')
+		this->_character = "impossible";
+	else if (std::isprint(this->_integer))
+		this->_character = static_cast<double>(this->_integer);
 	else
 		this->_character = "Non printable";
-	this->_dbl = (double)this->_floater;
+	this->_dbl = static_cast<double>(this->_floater);
 }
 
 Convert::Convert(const Convert &copy)
@@ -58,7 +59,18 @@ Convert	&Convert::operator=(const Convert &op)
 void	Convert::displayAtributes(void)
 {
 	std::cout << "char: " << this->_character << std::endl;
-	std::cout << "int: " << this->_integer << std::endl;
-	std::cout << "float: " << this->_floater << std::endl;
-	std::cout << "double: " << this->_dbl << std::endl;	
+	if (this->_character == "impossible")
+		std::cout << "int: " << "impossible" << std::endl;
+	else
+		std::cout << "int: " << this->_integer << std::endl;
+	if (this->_character == "impossible" && this->_floater == 0)
+	{
+		std::cout << "float: " << "impossible" << std::endl;
+		std::cout << "double: " << "imposible" << std::endl;
+	}
+	else
+	{
+		std::cout << "float: " << this->_floater << std::endl;
+		std::cout << "double: " << this->_dbl << std::endl;
+	}
 }
