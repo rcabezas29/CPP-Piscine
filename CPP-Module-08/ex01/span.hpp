@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:09:58 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/29 12:04:03 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:25:34 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ class Span
 {
 	private:
 		unsigned int 	_size;
-		int				*_values;
+		int	*_values;
 		int				_assignedValues;
 
 	public:

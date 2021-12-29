@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:10:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/29 12:07:48 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:27:23 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,32 @@ void			Span::addNumber(int n)
 
 unsigned int	Span::shortestSpan(void) const
 {
-	unsigned int	min;
+	int	span;
 
-	min = INT32_MAX;
-	for (int i = 0; i < (int)this->_size; i++)
+	span = INT16_MAX;
+	for (unsigned int i = 0; i < this->_size; i++)
 	{
-		if ((unsigned int)this->_values[i] < min)
-			min = this->_values[i];
+		for (unsigned int j = 0; j < this->_size; j++)
+		{
+			if (this->_values[i] - this->_values[j] < span && this->_values[i] != this->_values[j])
+				span = this->_values[i] - this->_values[j];
+		}
 	}
-	return min;
+	return span;
 }
 
 unsigned int	Span::longestSpan(void) const
 {
-	unsigned int	max;
+	int	span;
 
-	max = 0;
-	for (int i = 0; i < (int)this->_size; i++)
+	span = 0;
+	for (unsigned int i = 0; i < this->_size; i++)
 	{
-		if ((unsigned int)this->_values[i] > max)
-			max = this->_values[i];
+		for (unsigned int j = 0; j < this->_size; j++)
+		{
+			if (this->_values[i] - this->_values[j] > span && this->_values[i] != this->_values[j])
+				span = this->_values[i] - this->_values[j];
+		}
 	}
-	return max;
+	return span;
 }
