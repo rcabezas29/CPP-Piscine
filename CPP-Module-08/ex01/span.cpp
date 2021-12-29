@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:10:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/22 10:04:27 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/29 12:07:48 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,37 @@ Span	&Span::operator=(const Span &op)
 
 void			Span::addNumber(int n)
 {
-	
+	if (this->_assignedValues < (int)this->_size)
+	{
+		this->_values[_assignedValues] = n;
+		this->_assignedValues++;
+	}
+	else
+		throw Span::PositionAccessException();
 }
 
 unsigned int	Span::shortestSpan(void) const
 {
-	
+	unsigned int	min;
+
+	min = INT32_MAX;
+	for (int i = 0; i < (int)this->_size; i++)
+	{
+		if ((unsigned int)this->_values[i] < min)
+			min = this->_values[i];
+	}
+	return min;
 }
 
 unsigned int	Span::longestSpan(void) const
 {
-	
+	unsigned int	max;
+
+	max = 0;
+	for (int i = 0; i < (int)this->_size; i++)
+	{
+		if ((unsigned int)this->_values[i] > max)
+			max = this->_values[i];
+	}
+	return max;
 }

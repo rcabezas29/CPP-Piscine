@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 20:57:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/22 09:07:42 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:44:10 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(void)
 
 	try
 	{
+		easyfind(v, 6);
 		easyfind(v, 7);
 	}
 	catch (int)
