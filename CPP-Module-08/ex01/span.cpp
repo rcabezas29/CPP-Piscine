@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:10:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/30 08:57:30 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/30 09:01:24 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	Span::shortestSpan(void) const
 	int	shortest;
 
 	shortest = INT32_MAX;
-	if (this->_size <= 1)
+	if (this->_size <= 1 || this->_assignedValues <= 1)
 		throw Span::NoNumbersToSpan();
 	for (unsigned int i = 0; i < this->_size - 1; i++)
 	{
@@ -74,7 +74,7 @@ int	Span::longestSpan(void) const
 	int	longest;
 
 	longest = 0;
-	if (this->_size <= 1)
+	if (this->_size <= 1 || this->_assignedValues <= 1)
 		throw Span::NoNumbersToSpan();
 	for (unsigned int i = 0; i < this->_size - 1; i++)
 	{

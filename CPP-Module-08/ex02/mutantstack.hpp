@@ -6,23 +6,30 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:06:43 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/22 11:48:20 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/30 10:39:02 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stack>
 #include <iostream>
 
-class	MutantStack
+template <typename T>
+class MutantStack : public std::stack<T>
 {
-	private:
-
 	public:
-		MutantStack(void);
-		MutantStack(const MutantStack &copy);
-		virtual	~MutantStack(void);
-		MutantStack	&operator=(const MutantStack &op);
+		MutantStack(void) : std::stack<T>(){};
+		MutantStack(const MutantStack &copy) : std::stack<T>(copy){};
+		virtual ~MutantStack(void){};
+		MutantStack	&operator=(const MutantStack &op)
+		{
+			if (this == &op)
+				return *this;
+			std::stack<T>::operator=(op);
+			return *this;
+		}
 
-		void	push(int);
-		void	top(void);
-			
+		typedef typename std::stack<T>::container_type::iterator iterator;
+
+		iterator	begin(void) {return std::stack<T>::c.begin();};
+		iterator	end(void) {return std::stack<T>::c.end();};
 };

@@ -6,17 +6,17 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/22 11:32:09 by rcabezas          #+#    #+#              #
-#    Updated: 2021/12/29 09:27:01 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/12/30 10:34:04 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = mutantstack
 
 CXX = clang++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp mutantstack.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

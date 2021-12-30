@@ -6,12 +6,12 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:05:49 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/22 11:46:00 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/30 09:53:39 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
-#include <stack>	
+#include <stack>
 
 int main()
 {
