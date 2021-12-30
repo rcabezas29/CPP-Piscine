@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:10:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/29 18:27:23 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/30 08:57:30 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,34 +52,36 @@ void			Span::addNumber(int n)
 		throw Span::PositionAccessException();
 }
 
-unsigned int	Span::shortestSpan(void) const
+int	Span::shortestSpan(void) const
 {
-	int	span;
+	int	shortest;
 
-	span = INT16_MAX;
-	for (unsigned int i = 0; i < this->_size; i++)
+	shortest = INT32_MAX;
+	if (this->_size <= 1)
+		throw Span::NoNumbersToSpan();
+	for (unsigned int i = 0; i < this->_size - 1; i++)
 	{
-		for (unsigned int j = 0; j < this->_size; j++)
-		{
-			if (this->_values[i] - this->_values[j] < span && this->_values[i] != this->_values[j])
-				span = this->_values[i] - this->_values[j];
-		}
+		if (std::abs(this->_values[i] - this->_values[i + 1]) < shortest)
+			shortest = std::abs(this->_values[i] - this->_values[i + 1]);
 	}
-	return span;
+	if (shortest < 0)
+		shortest *= -1;
+	return shortest;
 }
 
-unsigned int	Span::longestSpan(void) const
+int	Span::longestSpan(void) const
 {
-	int	span;
+	int	longest;
 
-	span = 0;
-	for (unsigned int i = 0; i < this->_size; i++)
+	longest = 0;
+	if (this->_size <= 1)
+		throw Span::NoNumbersToSpan();
+	for (unsigned int i = 0; i < this->_size - 1; i++)
 	{
-		for (unsigned int j = 0; j < this->_size; j++)
-		{
-			if (this->_values[i] - this->_values[j] > span && this->_values[i] != this->_values[j])
-				span = this->_values[i] - this->_values[j];
-		}
+		if (std::abs(this->_values[i] - this->_values[i + 1]) > longest)
+			longest = std::abs(this->_values[i] - this->_values[i + 1]);
 	}
-	return span;
+	if (longest < 0)
+		longest *= -1;
+	return longest;
 }

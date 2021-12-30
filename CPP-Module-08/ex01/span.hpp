@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:09:58 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/29 18:25:34 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/12/30 08:45:20 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,22 @@ class Span
 		Span	&operator=(const Span &op);
 
 		void			addNumber(int n);
-		unsigned int	shortestSpan(void) const;
-		unsigned int	longestSpan(void) const;
+		int	shortestSpan(void) const;
+		int	longestSpan(void) const;
 
 		class	PositionAccessException : public std::exception
 		{
 			virtual const char * what() const throw()
 			{
-				return "Impossible to get that position";
+				return "Impossible to add that number";
+			}
+		};
+
+		class	NoNumbersToSpan : public std::exception
+		{
+			virtual const char * what() const throw()
+			{
+				return "Impossible to span";
 			}
 		};
 };
