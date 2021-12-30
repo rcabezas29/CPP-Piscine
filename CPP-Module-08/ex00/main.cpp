@@ -28,7 +28,7 @@ int	main(void)
 	}
 	catch (int)
 	{
-		std::cout << "The number couldn't be find" << std::endl;
+		std::cout << "The number couldn't be found" << std::endl;
 	}
 
 	return 0;
