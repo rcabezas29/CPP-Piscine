@@ -52,7 +52,7 @@ int	main(void)
 	deep_copy = farm[3];
 	std::cout << "Deep copied animal is a " << deep_copy->getType() << std::endl;
 
-	std::cout << "This are its ideas" << std::endl;
+	std::cout << "Ideas:" << std::endl;
 	for (int i = 0; i < 5; i++)
 		std::cout << deep_copy->getBrain()->ideas[i] << std::endl;
 
