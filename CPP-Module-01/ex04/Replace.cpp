@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:36:43 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/07 09:24:05 by rcabezas         ###   ########.fr       */
+/*   Updated: 2022/08/29 19:44:31 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,16 @@ Replace::~Replace(void)
 
 std::string	Replace::replace_line(std::string line)
 {
-	std::string	newline;
-	size_t		position;
+	std::string::size_type	pos;
 	
-	position = 0;
-	newline = line.substr(position, line.find(this->_toReplace));
-	while ((position = line.find(this->_toReplace, position)) != std::string::npos)
+	pos = line.find(this->_toReplace);
+	while (pos != std::string::npos)
 	{
-		newline = newline + this->_replacement;
-		position += this->_toReplace.length();
-		newline = newline + line.substr(position, line.find(this->_toReplace));
+		line.erase(pos, this->_toReplace.size());
+		line.insert(pos, this->_replacement);
+		pos = line.find(this->_toReplace, pos + 1);
 	}
-	return newline;
+	return line;
 }
 
 void	Replace::get_line(void)
