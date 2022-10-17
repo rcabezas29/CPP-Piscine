@@ -6,13 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:30:43 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/06 20:13:32 by rcabezas         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:33:57 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -33,4 +31,3 @@ class Replace
 		void		get_line(void);
 		std::string	replace_line(std::string line);
 };
-#endif

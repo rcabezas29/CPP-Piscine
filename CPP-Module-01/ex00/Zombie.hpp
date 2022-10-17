@@ -6,12 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 07:04:58 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/12 09:33:33 by rcabezas         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:32:06 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -32,4 +31,3 @@ class	Zombie
 };
 Zombie	*new_zombie(std::string name);
 Zombie	*randomChump(std::string name);
-#endif

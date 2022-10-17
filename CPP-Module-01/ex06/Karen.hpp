@@ -6,12 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:16:08 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/07 09:32:54 by rcabezas         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:33:26 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -32,5 +31,3 @@ class Karen
 
 		void	complain(std::string level);
 };
-
-#endif

@@ -6,12 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:31:27 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/08 21:20:29 by rcabezas         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:34:16 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -29,5 +28,3 @@ class	HumanA
 
 		void	attack();
 };
-
-#endif

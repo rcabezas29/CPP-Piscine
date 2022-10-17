@@ -6,12 +6,11 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:31:50 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/12/13 13:41:01 by rcabezas         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:34:40 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -28,5 +27,3 @@ class	Weapon
 		std::string const	&getType(void);
 		void				setType(std::string _type);
 };
-
-#endif
