@@ -2,6 +2,8 @@
 
 #include <map>
 #include <iostream>
+#include <fstream>
+#include <limits>
 
 class BitcoinExchange
 {
@@ -13,4 +15,6 @@ class BitcoinExchange
         BitcoinExchange(const BitcoinExchange &copy);
         virtual ~BitcoinExchange(void);
         BitcoinExchange &operator=(const BitcoinExchange &op);
+
+        float   btc_value_for_date(std::string date, float n);
 };
