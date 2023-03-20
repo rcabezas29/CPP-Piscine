@@ -38,6 +38,8 @@ RPN::RPN(std::string statement)
             this->st.pop();
             this->st.push(a / b);
         }
+        else if (isspace(statement[i]))
+            continue ;
         else
         {
             std::cerr << "Error" << std::endl;
