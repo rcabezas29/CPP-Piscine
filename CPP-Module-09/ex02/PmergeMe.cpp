@@ -31,7 +31,7 @@ PmergeMe::PmergeMe(int argc, char **argv)
                 exit(1);
             }
             this->v.push_back(n);
-            this->dq.emplace_back(n);
+            this->dq.push_back(n);
         }
     }
 }
