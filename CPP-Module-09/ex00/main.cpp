@@ -20,10 +20,20 @@ int main(int argc, char **argv)
     {
         std::string date = line.substr(0, line.find(' '));
         float value = std::atof((line.substr(line.find(" | ") + 3, std::string::npos).c_str()));
-        float result = btc.btc_value_for_date(date, value);
-        std::cout << "RESULT = " << result << std::endl;
+
+        try
+        {
+            if (value == -1 && (line.substr(line.find(" | ") + 3, std::string::npos) != "-1"))
+                throw BitcoinExchange::ParsingInputFileException("bad input => " + date);
+            float result = btc.btc_value_for_date(date, value);
+            std::cout << date << " => " << value << " = " << result << std::endl;
+        }
+        catch (std::exception &e)
+        {
+            std::cerr << "Error: " << e.what() << std::endl;
+        }
     }
 
     input_file.close();
-
+    return 0;
 }

@@ -10,26 +10,40 @@ BitcoinExchange::BitcoinExchange(std::string data)
     {
         std::string date = line.substr(0, line.find(','));
         float value = std::atof((line.substr(line.find(",") + 1, std::string::npos).c_str()));
-        this->btc_hisstory.insert(std::make_pair(date, value));
+        this->btc_history.insert(std::make_pair(date, value));
     }
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
 {
-    (void)copy;
+    this->btc_history = copy.get_btc_history();
 }
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &op)
 {
-    (void)op;
+    if (this == &op)
+        return *this;
+    this->btc_history = op.get_btc_history();
     return *this;
 }
 
 BitcoinExchange::~BitcoinExchange(void)
 {
+    this->btc_history.clear();
+}
+
+std::map<std::string, float>    BitcoinExchange::get_btc_history(void) const
+{
+    return this->btc_history;
 }
 
 float   BitcoinExchange::btc_value_for_date(std::string date, float n)
 {
-    return this->btc_hisstory.lower_bound(date)->second * n;
+    if (n < 0)
+        throw BitcoinExchange::ParsingInputFileException("not a positive number");
+    if (n > 2147483647.0)
+        throw BitcoinExchange::ParsingInputFileException("too large number");
+    std::map<std::string, float>::iterator it = this->btc_history.upper_bound(date);
+    --it;
+    return it->second * n;
 }
