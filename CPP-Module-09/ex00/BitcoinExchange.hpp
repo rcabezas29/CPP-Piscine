@@ -26,6 +26,7 @@ class BitcoinExchange
 
             public:
                 ParsingInputFileException(const std::string e) : message(e) {}
+                virtual ~ParsingInputFileException() throw() {}
                 virtual const char * what() const throw()
                 {
                     return this->message.c_str();

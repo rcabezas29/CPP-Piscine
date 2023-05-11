@@ -18,13 +18,23 @@ int main(int argc, char **argv)
     std::string line;
     while (std::getline(input_file, line))
     {
-        std::string date = line.substr(0, line.find(' '));
-        float value = std::atof((line.substr(line.find(" | ") + 3, std::string::npos).c_str()));
 
         try
         {
-            if (value == -1 && (line.substr(line.find(" | ") + 3, std::string::npos) != "-1"))
-                throw BitcoinExchange::ParsingInputFileException("bad input => " + date);
+            float w;
+            int x,y,z;
+            int ret = sscanf(line.c_str(), "%d-%d-%d | %f", &x, &y, &z, &w);
+
+            if (ret != 4)
+            {
+                throw BitcoinExchange::ParsingInputFileException("bad input => " + line);
+                continue ;
+            }
+
+            std::string date = line.substr(0, line.find(' '));
+            float value = std::atof((line.substr(line.find(" | ") + 3, std::string::npos).c_str()));
+
+
             float result = btc.btc_value_for_date(date, value);
             std::cout << date << " => " << value << " = " << result << std::endl;
         }
