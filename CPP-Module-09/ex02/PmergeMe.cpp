@@ -61,21 +61,24 @@ std::vector<int> PmergeMe::get_vector(void) const { return this->v; }
 
 std::deque<int> PmergeMe::get_deque(void) const { return this->dq; }
 
-std::chrono::duration<double>   PmergeMe::get_vector_time(void) const { return this->vector_time; }
+double   PmergeMe::get_vector_time(void) const { return this->vector_time; }
 
-std::chrono::duration<double>   PmergeMe::get_deque_time(void) const { return this->deque_time; }
+double   PmergeMe::get_deque_time(void) const { return this->deque_time; }
 
 void        PmergeMe::sort(void)
 {
-    std::chrono::time_point<std::chrono::high_resolution_clock>	vector_start_time = std::chrono::high_resolution_clock::now();
-    this->vector_sort(0, this->v.size() -1);
-    std::chrono::time_point<std::chrono::high_resolution_clock>	vector_end_time = std::chrono::high_resolution_clock::now();
-    this->vector_time = vector_end_time - vector_start_time;
+    std::clock_t    beginning;
+    std::clock_t    end;
 
-    std::chrono::time_point<std::chrono::high_resolution_clock>	deque_start_time = std::chrono::high_resolution_clock::now();
-    this->deque_sort(0, this->v.size() -1);
-    std::chrono::time_point<std::chrono::high_resolution_clock>	deque_end_time = std::chrono::high_resolution_clock::now();
-    this->deque_time = deque_end_time - deque_start_time;
+    beginning = std::clock();
+    this->vector_sort(0, this->v.size() -1);
+    end = std::clock();
+    this->vector_time = (end - beginning) * 1000.0 / CLOCKS_PER_SEC;
+
+    beginning = std::clock();
+    this->deque_sort(0, this->dq.size() -1);
+    end = std::clock();
+    this->deque_time = (end - beginning) * 1000.0 / CLOCKS_PER_SEC;
 }
 
 void PmergeMe::vectorInsertionSort(int p, int q)

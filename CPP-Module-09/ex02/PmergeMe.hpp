@@ -10,8 +10,8 @@ class   PmergeMe
     private:
         std::vector<int>    v;
         std::deque<int>     dq;
-        std::chrono::duration<double>   vector_time;
-        std::chrono::duration<double>   deque_time;
+        double              vector_time;
+        double              deque_time;
 
     public:
         PmergeMe(int argc, char **argv);
@@ -21,8 +21,8 @@ class   PmergeMe
 
         std::vector<int>    get_vector(void) const;
         std::deque<int>     get_deque(void) const;
-        std::chrono::duration<double>   get_vector_time(void) const;
-        std::chrono::duration<double>   get_deque_time(void) const;
+        double              get_vector_time(void) const;
+        double              get_deque_time(void) const;
 
         void        sort(void);
 

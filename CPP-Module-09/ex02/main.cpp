@@ -22,6 +22,6 @@ int main(int argc, char **argv)
     sorter.sort();
     print_after(sorter.get_vector());
 
-    std::cout << "Time to process a range of " << sorter.get_vector().size() << " elements with std::vector : " << sorter.get_vector_time().count() << " ms" << std::endl;
-    std::cout << "Time to process a range of " << sorter.get_deque().size() << " elements with std::deque : " << sorter.get_deque_time().count() << " ms" << std::endl;
+    std::cout << "Time to process a range of " << sorter.get_vector().size() << " elements with std::vector : " << sorter.get_vector_time() << " ms" << std::endl;
+    std::cout << "Time to process a range of " << sorter.get_deque().size() << " elements with std::deque : " << sorter.get_deque_time() << " ms" << std::endl;
 }
