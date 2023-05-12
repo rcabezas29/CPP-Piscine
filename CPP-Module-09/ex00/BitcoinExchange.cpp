@@ -49,11 +49,13 @@ float   BitcoinExchange::btc_value_for_date(std::string date, float n)
     return it->second * n;
 }
 
-bool    BitcoinExchange::check_is_bad_input(int ret, int y, int z) const
+bool    BitcoinExchange::check_is_bad_input(std::string date, int ret) const
 {
+    struct tm tm;
+    
     if (ret != 4)
         return true;
-    if (y > 12 || z > 31)
+    if (!strptime(date.c_str(), "%Y-%m-%d", &tm))
         return true;
     return false;
 }

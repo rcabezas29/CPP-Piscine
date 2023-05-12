@@ -25,14 +25,15 @@ int main(int argc, char **argv)
             int x,y,z;
             int ret = sscanf(line.c_str(), "%4d-%2d-%2d | %f", &x, &y, &z, &w);
 
-            if (btc.check_is_bad_input(ret, y, z))
+            std::string date = line.substr(0, line.find(' '));
+            float value = std::atof((line.substr(line.find(" | ") + 3, std::string::npos).c_str()));
+    
+            if (btc.check_is_bad_input(date, ret))
             {
                 throw BitcoinExchange::ParsingInputFileException("bad input => " + line);
                 continue ;
             }
 
-            std::string date = line.substr(0, line.find(' '));
-            float value = std::atof((line.substr(line.find(" | ") + 3, std::string::npos).c_str()));
 
 
             float result = btc.btc_value_for_date(date, value);
