@@ -19,6 +19,7 @@ class BitcoinExchange
         std::map<std::string, float>    get_btc_history(void) const;
 
         float   btc_value_for_date(std::string date, float n);
+        bool    check_is_bad_input(int ret, int y, int z) const;
 
         class ParsingInputFileException : public std::exception {
             private:

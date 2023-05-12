@@ -44,6 +44,16 @@ float   BitcoinExchange::btc_value_for_date(std::string date, float n)
     if (n > 2147483647.0)
         throw BitcoinExchange::ParsingInputFileException("too large number");
     std::map<std::string, float>::iterator it = this->btc_history.upper_bound(date);
-    --it;
+    if (it != this->btc_history.begin())
+        --it;
     return it->second * n;
+}
+
+bool    BitcoinExchange::check_is_bad_input(int ret, int y, int z) const
+{
+    if (ret != 4)
+        return true;
+    if (y > 12 || z > 31)
+        return true;
+    return false;
 }

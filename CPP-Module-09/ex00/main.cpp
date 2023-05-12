@@ -23,9 +23,9 @@ int main(int argc, char **argv)
         {
             float w;
             int x,y,z;
-            int ret = sscanf(line.c_str(), "%d-%d-%d | %f", &x, &y, &z, &w);
+            int ret = sscanf(line.c_str(), "%4d-%2d-%2d | %f", &x, &y, &z, &w);
 
-            if (ret != 4)
+            if (btc.check_is_bad_input(ret, y, z))
             {
                 throw BitcoinExchange::ParsingInputFileException("bad input => " + line);
                 continue ;
