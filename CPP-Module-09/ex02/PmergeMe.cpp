@@ -128,7 +128,7 @@ void PmergeMe::vectorMerge(int p, int q, int r)
 
 void        PmergeMe::vector_sort(int p, int r)
 {
-    if (r - p > 5)
+    if (r - p > (int)this->v.size())
     {
         int q = (p + r) / 2;
         this->vector_sort(p, q);
@@ -189,7 +189,7 @@ void PmergeMe::dequeMerge(int p, int q, int r)
 
 void        PmergeMe::deque_sort(int p, int r)
 {
-    if (r - p > 5)
+    if (r - p > (int)this->dq.size())
     {
         int q = (p + r) / 2;
         this->deque_sort(p, q);
@@ -198,25 +198,4 @@ void        PmergeMe::deque_sort(int p, int r)
     }
     else
         this->dequeInsertionSort(p, r);
-}
-
-
-std::vector<int>    PmergeMe::get_vector() const
-{
-    return this->v;
-}
-
-std::deque<int>    PmergeMe::get_deque() const
-{
-    return this->dq;
-}
-
-std::vector<int>    PmergeMe::get_vtime() const
-{
-
-}
-
-std::vector<int>    PmergeMe::get_dqtime() const
-{
-
 }
