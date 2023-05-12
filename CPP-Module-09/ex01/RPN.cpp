@@ -42,12 +42,16 @@ RPN::RPN(std::string statement)
 
 RPN::RPN(const RPN &copy)
 {
-    (void)copy;
+    this->result = copy.get_result();
+    this->st = copy.get_stack();
 }
 
 RPN &RPN::operator=(const RPN &op)
 {
-    (void)op;
+if (this == &op)
+        return *this;
+    this->result = op.get_result();
+    this->st = op.get_stack();
     return *this;
 }
 
@@ -59,4 +63,9 @@ RPN::~RPN(void)
 int RPN::get_result(void) const
 {
     return this->result;
+}
+
+std::stack<int> RPN::get_stack(void) const
+{
+    return this->st;
 }

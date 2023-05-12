@@ -38,17 +38,22 @@ PmergeMe::PmergeMe(int argc, char **argv)
 
 PmergeMe::PmergeMe(const PmergeMe &copy)
 {
-    (void)copy;
+    this->v = copy.get_vector();
+    this->dq = copy.get_deque();
 }
 
 PmergeMe::~PmergeMe(void)
 {
-
+    this->v.clear();
+    this->dq.clear();
 }
 
 PmergeMe    &PmergeMe::operator=(const PmergeMe &op)
 {
-    (void)op;
+    if (this == &op)
+        return *this;
+    this->v = op.get_vector();
+    this->dq = op.get_deque();
     return *this;
 }
 
@@ -193,4 +198,25 @@ void        PmergeMe::deque_sort(int p, int r)
     }
     else
         this->dequeInsertionSort(p, r);
+}
+
+
+std::vector<int>    PmergeMe::get_vector() const
+{
+    return this->v;
+}
+
+std::deque<int>    PmergeMe::get_deque() const
+{
+    return this->dq;
+}
+
+std::vector<int>    PmergeMe::get_vtime() const
+{
+
+}
+
+std::vector<int>    PmergeMe::get_dqtime() const
+{
+
 }

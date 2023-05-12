@@ -16,4 +16,5 @@ class   RPN
         virtual ~RPN(void);
 
         int get_result(void) const;
+        std::stack<int> get_stack(void) const;
 };

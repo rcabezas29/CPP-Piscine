@@ -19,6 +19,13 @@ class   PmergeMe
         virtual ~PmergeMe(void);
         PmergeMe    &operator=(const PmergeMe &op);
 
+        std::vector<int>    get_vector() const;
+        std::deque<int>    get_deque() const;
+
+        std::vector<int>    get_vtime() const;
+        std::vector<int>    get_dqtime() const;
+
+
         std::vector<int>    get_vector(void) const;
         std::deque<int>     get_deque(void) const;
         std::chrono::duration<double>   get_vector_time(void) const;
