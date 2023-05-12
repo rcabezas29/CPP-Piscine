@@ -31,8 +31,7 @@ RPN::RPN(std::string statement)
         }
         else
         {
-            std::cerr << "Error" << std::endl;
-            exit(1);
+            throw std::runtime_error("Error");
         }
     }
     if (this->st.size() != 1)
